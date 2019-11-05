@@ -1,0 +1,1574 @@
+（1）
+Model setting:
+num_total = len(raw_data)
+random_site = random.sample(range(num_total), round(num_total*0.3))
+m_class = xgb.XGBClassifier(learning_rate=eta, n_estimators=1000, max_depth=5, gamma=0, subsample=0.8, n_jobs=-1,
+                         colsample_bytree=0.8, objective='binary:logistic', seed=27)
+para_list = ['is_mix_service',
+             '1_total_fee_norm', '2_total_fee_norm', '3_total_fee_norm', '4_total_fee_norm',
+             'many_over_bill', 'contract_type',
+             'is_promise_low_consume', 'net_service', 'pay_times',
+             'gender',
+             'complaint_level',
+             'online_time_norm', 'fee_mean_norm', 'fee_std_norm',
+             'fee_fluctuate_norm', 'month_traffic_norm', 'contract_time_norm', 'pay_num_norm',
+             'last_month_traffic_norm', 'local_trafffic_month_norm', 'local_caller_time_norm',
+             'service1_caller_time_norm', 'service2_caller_time_norm', 'age_norm', 'former_complaint_num_norm',
+             'former_complaint_fee_norm', 'fee_mean_2_norm', 'service_caller_time_fluctuate_norm',
+             'month_traffic_precentage', 'contract_time_precentage',
+             'pay_times_precentage', 'pay_num_precentage', 'last_month_traffic_precentage',
+             'local_trafffic_month_precentage', 'local_caller_time_precentage', 'service1_caller_time_precentage',
+             'service2_caller_time_precentage',
+             'user_id'
+             ]
+learning_rate = [0.01, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4]
+
+results:
+F1_score = [0.6720960733540151, 0.7259909818408755, 0.7339759452086139, 0.7310044170814335, 0.7309935007142503, 0.7331993191409275, 0.7229252348218983, 0.7232208390256465, 0.7250609116855498]
+best F1
+0.7339759452086139
+Best learning rate
+0.1
+Test Accuracy : 0.88
+Test confusion matrix
+[[3789   87   19    0    5   29   21   72]
+ [ 115 1913    5    2   19   44  116   23]
+ [  42    9  933    0    0    1    0    8]
+ [   1    2    1  591   20    9    1    0]
+ [   3   18    1   12  764   55   35    0]
+ [  11   26    1   10   98  724   90    4]
+ [  34  122    1    5   47   78 1271    7]
+ [ 147    7    3    0    7    3    5  434]]
+F1
+[0.9282214600685939, 0.8654150644650531, 0.9535002554931017, 0.9493975903614458, 0.8268398268398268, 0.7593078133193498, 0.8189432989690721, 0.7521663778162911]
+precision
+[0.9147754707870593, 0.8759157509157509, 0.9678423236514523, 0.9532258064516129, 0.7958333333333333, 0.767762460233298, 0.8258609486679662, 0.791970802919708]
+recall
+[0.9420686225758329, 0.8551631649530621, 0.9395770392749244, 0.9456, 0.8603603603603603, 0.7510373443983402, 0.8121405750798723, 0.7161716171617162]
+test F1_score
+0.7339759452086139
+
+
+
+(2)
+Model setting:
+num_total = len(raw_data)
+random_site = random.sample(range(num_total), round(num_total*0.3))
+m_class = xgb.XGBClassifier(learning_rate=eta, n_estimators=1000, max_depth=5, gamma=0, subsample=0.8, n_jobs=-1,
+                         colsample_bytree=0.8, objective='binary:logistic', seed=27)
+para_list = ['is_mix_service',
+             '1_total_fee_norm', '2_total_fee_norm', '3_total_fee_norm', '4_total_fee_norm',
+             'many_over_bill', 'contract_type',
+             'is_promise_low_consume', 'net_service', 'pay_times',
+             'gender',
+             'complaint_level',
+             'online_time_norm', 'fee_mean_norm', 'fee_std_norm',
+             'fee_fluctuate_norm', 'month_traffic_norm', 'contract_time_norm', 'pay_num_norm',
+             'last_month_traffic_norm', 'local_trafffic_month_norm', 'local_caller_time_norm',
+             'service1_caller_time_norm', 'service2_caller_time_norm', 'age_norm', 'former_complaint_num_norm',
+             'former_complaint_fee_norm', 'fee_mean_2_norm', 'service_caller_time_fluctuate_norm',
+             'month_traffic_precentage', 'contract_time_precentage',
+             'pay_times_precentage', 'pay_num_precentage', 'last_month_traffic_precentage',
+             'local_trafffic_month_precentage', 'local_caller_time_precentage', 'service1_caller_time_precentage',
+             'service2_caller_time_precentage',
+             'user_id'
+             ]
+learning_rate = [0.05, 0.08, 0.1, 0.12, 0.15, 0.18, 0.2]
+
+results:
+F1_score =[0.7284005370314036, 0.7373393997927977, 0.7341392619902162, 0.7375678466794298, 0.7404284856003759, 0.7404009489852389, 0.7367235053547567]
+best F1
+0.7404284856003759
+Best learning rate
+0.15
+Test Accuracy : 0.88
+Test confusion matrix
+[[3676   96   22    0    6   13   27   69]
+ [ 112 1957    3    0   13   41  118    6]
+ [  61    8  951    0    1    1    0    4]
+ [   0    4    0  586   17    5    4    0]
+ [   3   12    1   28  748   71   38    0]
+ [  13   35    0    6   84  723   62    2]
+ [  39   91    1    8   47   97 1339    9]
+ [ 145   13    2    0    2    7   11  462]]
+F1
+[0.9238502136215129, 0.8763994626063591, 0.9481555333998005, 0.942122186495177, 0.8224299065420562, 0.7679235262878384, 0.8291021671826626, 0.7738693467336683]
+precision
+[0.9078784885156829, 0.8831227436823105, 0.9704081632653061, 0.9331210191082803, 0.8148148148148148, 0.7546972860125261, 0.8373983739837398, 0.8369565217391305]
+recall
+[0.9403939626502942, 0.8697777777777778, 0.9269005847953217, 0.9512987012987013, 0.8301886792452831, 0.7816216216216216, 0.8209687308399755, 0.719626168224299]
+test F1_score
+0.7404284856003759
+
+
+(3)
+Model setting:
+label_train, label_test, data_train, data_test = train_test_split(label, raw_data[par_list], test_size=0.1)
+ m_class = xgb.XGBClassifier(learning_rate=0.1, n_estimators=1000, max_depth=5, gamma=0, subsample=0.8, n_jobs=-1,
+                                colsample_bytree=0.8, objective='binary:logistic', seed=27)
+para_list = ['is_mix_service', 'online_time', '1_total_fee', '2_total_fee', '3_total_fee', '4_total_fee',
+             '1_total_fee_norm', '2_total_fee_norm', '3_total_fee_norm', '4_total_fee_norm',
+             'month_traffic', 'many_over_bill', 'contract_type', 'contract_time',
+             'is_promise_low_consume', 'net_service', 'pay_times', 'pay_num', 'last_month_traffic',
+             'local_trafffic_month', 'local_caller_time', 'service1_caller_time', 'service2_caller_time', 'gender',
+             'age', 'complaint_level', 'former_complaint_num', 'former_complaint_fee',
+             'fee_mean', 'fee_std', 'fee_fluctuate', 'fee_mean_2',
+             'service_caller_time_fluctuate', 'online_time_norm', 'fee_mean_norm', 'fee_std_norm',
+             'fee_fluctuate_norm', 'month_traffic_norm', 'contract_time_norm', 'pay_num_norm',
+             'last_month_traffic_norm', 'local_trafffic_month_norm', 'local_caller_time_norm',
+             'service1_caller_time_norm', 'service2_caller_time_norm', 'age_norm', 'former_complaint_num_norm',
+             'former_complaint_fee_norm', 'fee_mean_2_norm', 'service_caller_time_fluctuate_norm',
+             'month_traffic_precentage', 'contract_time_precentage',
+             'pay_times_precentage', 'pay_num_precentage', 'last_month_traffic_precentage',
+             'local_trafffic_month_precentage', 'local_caller_time_precentage', 'service1_caller_time_precentage',
+             'service2_caller_time_precentage',
+             'user_id'
+             ]
+
+
+results:
+Test Accuracy : 0.90
+Test confusion matrix
+[[12514   273    45     1    20    62    91   246]
+ [  266  6591     7     5    51   149   343    21]
+ [  105    14  3146     0     1     1     2    16]
+ [    0     2     0  1943    34    14     3     0]
+ [    7    38     0    67  2593   157    82     4]
+ [   34    86     2    19   275  2616   185     7]
+ [  102   267     3    10   179   264  4464    28]
+ [  455    42     5     1    15    14    31  1646]]
+F1
+[0.9361511127735178, 0.8939373389393734, 0.9690435853996612, 0.9614052449282534, 0.8479398299542183, 0.8047992616520536, 0.8488305761551627, 0.7881254488867607]
+precision
+[0.9281317214269821, 0.9012717079174074, 0.9806733167082294, 0.9496578690127078, 0.8184974747474747, 0.7982911199267623, 0.8582964814458758, 0.8363821138211383]
+recall
+[0.9443102927859945, 0.8867213776402529, 0.9576864535768645, 0.9734468937875751, 0.8795793758480326, 0.8114143920595533, 0.8395711867594509, 0.7451335445903123]
+test F1_score
+0.7766527636800633
+best F1
+0.7766527636800633
+Best learning rate
+0.15
+
+(4)
+Model setting:
+label_train, label_test, data_train, data_test = train_test_split(label, raw_data[par_list], test_size=0.1)
+ m_class = xgb.XGBClassifier(learning_rate=0.1, n_estimators=1000, max_depth=5, gamma=0, subsample=0.8, n_jobs=-1,
+                                colsample_bytree=0.8, objective='binary:logistic', seed=27)
+
+para_list = ['is_mix_service',
+             '1_total_fee_norm', '2_total_fee_norm', '3_total_fee_norm', '4_total_fee_norm',
+             'many_over_bill', 'contract_type',
+             'is_promise_low_consume', 'net_service', 'pay_times',
+             'gender',
+             'complaint_level',
+             'online_time_norm', 'fee_mean_norm', 'fee_std_norm',
+             'fee_fluctuate_norm', 'month_traffic_norm', 'contract_time_norm', 'pay_num_norm',
+             'last_month_traffic_norm', 'local_trafffic_month_norm', 'local_caller_time_norm',
+             'service1_caller_time_norm', 'service2_caller_time_norm', 'age_norm', 'former_complaint_num_norm',
+             'former_complaint_fee_norm', 'fee_mean_2_norm', 'service_caller_time_fluctuate_norm',
+             'month_traffic_precentage', 'contract_time_precentage',
+             'pay_times_precentage', 'pay_num_precentage', 'last_month_traffic_precentage',
+             'local_trafffic_month_precentage', 'local_caller_time_precentage', 'service1_caller_time_precentage',
+             'service2_caller_time_precentage',
+             'user_id'
+             ]
+
+
+results:
+Test Accuracy : 0.89
+Test confusion matrix
+[[12518   301    45     1    13    55    84   215]
+ [  294  6529     5     3    76   147   350    42]
+ [  131    22  3227     1     0     1     2    13]
+ [    0     2     0  1918    61    12     4     0]
+ [   12    32     2    52  2592   175    80     7]
+ [   35    80     2    15   288  2623   186     9]
+ [   88   250     2    22   169   269  4438    28]
+ [  465    35    14     2     6    12    29  1573]]
+F1
+[0.9350513538748834, 0.888480642307954, 0.9641469973110247, 0.956369982547993, 0.8419684911482865, 0.8031230863441519, 0.8502730146565762, 0.7820034799900571]
+precision
+[0.9243151443550174, 0.9004275272376224, 0.9787685774946921, 0.9523336643495531, 0.8087363494539782, 0.7962962962962963, 0.857916102841678, 0.8335983041865395]
+recall
+[0.9460399032648126, 0.8768466290625839, 0.9499558433912275, 0.9604406609914873, 0.8780487804878049, 0.8100679431747992, 0.8427649069502469, 0.7364232209737828]
+test F1_score
+0.7703171463200897
+best F1
+0.7703171463200897
+Best learning rate
+0.15
+
+
+(5)
+Model setting:
+label_train, label_test, data_train, data_test = train_test_split(label, raw_data[par_list], test_size=0.1)
+ m_class = xgb.XGBClassifier(learning_rate=0.1, n_estimators=1000, max_depth=5, gamma=0, subsample=0.8, n_jobs=-1,
+                                colsample_bytree=0.8, objective='binary:logistic', seed=27)
+para_list = ['is_mix_service',
+             '1_total_fee', '2_total_fee', '3_total_fee', '4_total_fee',
+             'many_over_bill', 'contract_type',
+             'is_promise_low_consume', 'net_service', 'pay_times',
+             'gender',
+             'complaint_level',
+             'online_time', 'fee_mean', 'fee_std',
+             'fee_fluctuate', 'month_traffic', 'contract_time', 'pay_num',
+             'last_month_traffic', 'local_trafffic_month', 'local_caller_time',
+             'service1_caller_time', 'service2_caller_time', 'age_norm', 'former_complaint_num_norm',
+             'former_complaint_fee', 'fee_mean_2', 'service_caller_time_fluctuate',
+             'month_traffic_precentage', 'contract_time_precentage',
+             'pay_times_precentage', 'pay_num_precentage', 'last_month_traffic_precentage',
+             'local_trafffic_month_precentage', 'local_caller_time_precentage', 'service1_caller_time_precentage',
+             'service2_caller_time_precentage',
+             'user_id'
+             ]
+
+results:
+Test Accuracy : 0.89
+Test confusion matrix
+[[12684   281    41     2    31    53    80   237]
+ [  299  6394     4     5    65   161   343    29]
+ [  132    14  3204     0     1     3     3    16]
+ [    1     2     0  2046    46    10     5     1]
+ [   17    29     1    56  2582   165    80     4]
+ [   35    89     0    17   250  2692   167    16]
+ [  107   258     3    14   161   285  4362    30]
+ [  454    28     9     1     8    13    27  1511]]
+F1
+[0.9347778023435772, 0.8883640152830844, 0.9657874905802564, 0.962370649106303, 0.8496215860480422, 0.8098676293622141, 0.8480606590842812, 0.7758664955070603]
+precision
+[0.9238837497268556, 0.9011980267794222, 0.9822194972409565, 0.9556282111163008, 0.8212468193384224, 0.7959787108219988, 0.8608644168146833, 0.81941431670282]
+recall
+[0.9459318368260123, 0.8758904109589041, 0.9498962348058109, 0.9692089057318807, 0.880027266530334, 0.8242498469075321, 0.835632183908046, 0.7367137981472452]
+test F1_score
+0.7732380282154638
+best F1
+0.7732380282154638
+Best learning rate
+0.15
+
+(6)
+Model setting:
+label_train, label_test, data_train, data_test = train_test_split(label, raw_data[par_list], test_size=0.1)
+ m_class = xgb.XGBClassifier(learning_rate=0.1, n_estimators=1000, max_depth=5, gamma=0, subsample=0.8, n_jobs=-1,
+                                colsample_bytree=0.8, objective='binary:logistic', seed=27)
+para_list = ['1_total_fee', '3_total_fee', 'month_traffic', '2_total_fee', 'online_time', '4_total_fee',
+             'service2_caller_time', 'last_month_traffic', 'local_trafffic_month', 'fee_std',
+             'service_caller_time_fluctuate', 'fee_fluctuate', 'fee_mean_2', 'pay_num', 'local_caller_time',
+             'fee_mean', 'age', 'contract_type', 'contract_time', 'service1_caller_time', '1_total_fee_norm',
+             '2_total_fee_norm', '3_total_fee_norm', '4_total_fee_norm', 'user_id']
+
+results:
+Test Accuracy : 0.89
+Test confusion matrix
+[[12688   325    43     1    39    76   119   271]
+ [  267  6531    12     7    77   163   359    22]
+ [  130    20  3118     0     0     2     5    12]
+ [    2     4     0  1965    42    13     5     0]
+ [   13    30     2    68  2565   177   101     8]
+ [   38    89     1    35   286  2534   217    11]
+ [  129   265     5    17   191   265  4208    36]
+ [  468    30     5     1    16    12    28  1495]]
+F1
+[0.9296259662233944, 0.8866413250067878, 0.9633863741696277, 0.9527272727272728, 0.8300970873786407, 0.7853711452037812, 0.8285095491238433, 0.764705882352941]
+precision
+[0.923771386967601, 0.8953934740882917, 0.9786566227244193, 0.9383954154727794, 0.7975746268656716, 0.7816162862430598, 0.8345894486314954, 0.8059299191374663]
+recall
+[0.9355552278425011, 0.8780586179080397, 0.9485853361728019, 0.9675036927621861, 0.8653846153846154, 0.7891622547492992, 0.8225175918686474, 0.7274939172749392]
+test F1_score
+0.7527871533081798
+best F1
+0.7527871533081798
+Best learning rate
+0.15
+
+
+
+(6)
+
+label_train, label_test, data_train, data_test = train_test_split(label, raw_data[par_list], test_size=0.1)
+ m_class = xgb.XGBClassifier(learning_rate=0.1, n_estimators=1000, max_depth=5, gamma=0, subsample=0.8, n_jobs=-1,
+                                colsample_bytree=0.8, objective='binary:logistic', seed=27)
+raw_data = data_balance(raw_data, [0, 1, 6], [0.7, 0.4, 0.2])
+para_list = ['is_mix_service', 'online_time', '1_total_fee', '2_total_fee', '3_total_fee', '4_total_fee',
+             '1_total_fee_norm', '2_total_fee_norm', '3_total_fee_norm', '4_total_fee_norm',
+             'month_traffic', 'many_over_bill', 'contract_type', 'contract_time',
+             'is_promise_low_consume', 'net_service', 'pay_times', 'pay_num', 'last_month_traffic',
+             'local_trafffic_month', 'local_caller_time', 'service1_caller_time', 'service2_caller_time', 'gender',
+             'age', 'complaint_level', 'former_complaint_num', 'former_complaint_fee',
+             'fee_mean', 'fee_std', 'fee_fluctuate', 'fee_mean_2',
+             'service_caller_time_fluctuate', 'online_time_norm', 'fee_mean_norm', 'fee_std_norm',
+             'fee_fluctuate_norm', 'month_traffic_norm', 'contract_time_norm', 'pay_num_norm',
+             'last_month_traffic_norm', 'local_trafffic_month_norm', 'local_caller_time_norm',
+             'service1_caller_time_norm', 'service2_caller_time_norm', 'age_norm', 'former_complaint_num_norm',
+             'former_complaint_fee_norm', 'fee_mean_2_norm', 'service_caller_time_fluctuate_norm',
+             'month_traffic_precentage', 'contract_time_precentage',
+             'pay_times_precentage', 'pay_num_precentage', 'last_month_traffic_precentage',
+             'local_trafffic_month_precentage', 'local_caller_time_precentage', 'service1_caller_time_precentage',
+             'service2_caller_time_precentage',
+             'user_id'
+             ]
+
+results:
+Test Accuracy : 0.88
+Test confusion matrix
+[[3594  140   42    0    7   36   50  231]
+ [  70 3894    5    1   54  101  263   39]
+ [  60   15 3208    2    2    3    2   23]
+ [   0    3    0 2031   51   16    2    0]
+ [   1   17    1   62 2659  141   68    5]
+ [   4   49    3   23  287 2604  174   14]
+ [  29  191    3   13  172  243 3534   28]
+ [ 221   25    8    0    6   13   31 1752]]
+F1
+[0.889714073523951, 0.8889396187649811, 0.9743356112376613, 0.9591499409681228, 0.8588501291989663, 0.8247030878859858, 0.8477869737315582, 0.8447444551591128]
+precision
+[0.903242020608193, 0.8984771573604061, 0.981039755351682, 0.952626641651032, 0.8211859172328598, 0.8248337028824834, 0.8569350145489816, 0.8374760994263862]
+recall
+[0.8765853658536585, 0.8796024395753331, 0.9677224736048265, 0.9657631954350927, 0.9001354096140826, 0.824572514249525, 0.8388321860906718, 0.8521400778210116]
+test F1_score
+0.7850455925224139
+best F1
+0.7850455925224139
+Best learning rate
+0.15
+
+
+(7)
+Model Setting:
+num_total = len(raw_data)
+random_site = random.sample(range(num_total), round(num_total * 0.3))
+raw_data = raw_data.iloc[random_site]
+para_list = ['is_mix_service', 'online_time', '1_total_fee', '2_total_fee', '3_total_fee', '4_total_fee',
+                 '1_total_fee_norm', '2_total_fee_norm', '3_total_fee_norm', '4_total_fee_norm',
+                 'month_traffic', 'many_over_bill', 'contract_type', 'contract_time',
+                 'is_promise_low_consume', 'net_service', 'pay_times', 'pay_num', 'last_month_traffic',
+                 'local_trafffic_month', 'local_caller_time', 'service1_caller_time', 'service2_caller_time', 'gender',
+                 'age', 'complaint_level', 'former_complaint_num', 'former_complaint_fee',
+                 'fee_mean', 'fee_std', 'fee_fluctuate', 'fee_mean_2',
+                 'service_caller_time_fluctuate', 'online_time_norm', 'fee_mean_norm', 'fee_std_norm',
+                 'fee_fluctuate_norm', 'month_traffic_norm', 'contract_time_norm', 'pay_num_norm',
+                 'last_month_traffic_norm', 'local_trafffic_month_norm', 'local_caller_time_norm',
+                 'service1_caller_time_norm', 'service2_caller_time_norm', 'age_norm', 'former_complaint_num_norm',
+                 'former_complaint_fee_norm', 'fee_mean_2_norm', 'service_caller_time_fluctuate_norm',
+                 'month_traffic_precentage', 'contract_time_precentage',
+                 'pay_times_precentage', 'pay_num_precentage', 'last_month_traffic_precentage',
+                 'local_trafffic_month_precentage', 'local_caller_time_precentage', 'service1_caller_time_precentage',
+                 'service2_caller_time_precentage',
+                 'user_id'
+                 ]
+ label_train, label_test, data_train, data_test = train_test_split(label, raw_data[par_list], test_size=0.1)
+
+cv_params = {'n_estimators': [500, 800, 1000, 1200, 1500, 1800, 2000, 2200, 2500, 2800, 3000]}
+other_params = {'learning_rate': 0.1, 'max_depth': 5, 'min_child_weight': 1, 'seed': 0,
+                        'subsample': 0.8, 'colsample_bytree': 0.8, 'gamma': 0, 'reg_alpha': 0, 'reg_lambda': 1,
+                        'n_jobs': -1, 'objective': 'binary:logistic'}
+model = xgb.XGBClassifier(**other_params)
+optimized_GBM = RandomizedSearchCV(estimator=model, param_distributions=cv_params, scoring='F1', cv=3, verbose=1, n_jobs=-1)
+best_model = xgb.XGBClassifier(learning_rate=0.1, n_estimators=optimized_GBM.best_params_["n_estimators"],
+                                       max_depth=5, min_child_weight=1, seed=0,
+                                       subsample=0.8, colsample_bytree=0.8, gamma=0, reg_alpha=0, reg_lambda=1, n_jobs=-1,
+                                       ojective='binary:logistic')
+
+
+
+
+
+
+
+
+Results:
+[Parallel(n_jobs=-1)]: Done  30 out of  30 | elapsed: 366.9min finished
+每轮迭代运行结果:{'mean_fit_time': array([5045.74052572, 9334.02153182, 6148.66277917, 3528.64173373,
+       1854.2778364 , 6808.99003291, 4033.11698397, 9274.17669868,
+       6905.5322237 , 2664.41284402]), 'std_fit_time': array([ 33.05883495,  91.02916561, 129.49250144,  64.33513119,
+       118.05740515, 101.13009204,  21.74379692, 667.84459855,
+       508.47433505, 109.11172015]), 'mean_score_time': array([28.56560914, 43.4421254 , 26.33377632, 15.64233987,  3.3393995 ,
+       23.32355523, 12.7128005 , 29.20991309, 21.25722114,  6.83685851]), 'std_score_time': array([ 7.46782769, 13.61466423,  8.92385471,  4.49837288,  0.31177048,
+        1.83426356,  1.07600766,  5.31122615,  3.06570703,  1.30234801]), 'param_n_estimators': masked_array(data=[1500, 2800, 1800, 1000, 500, 2000, 1200, 3000, 2200,
+                   800],
+             mask=[False, False, False, False, False, False, False, False,
+                   False, False],
+       fill_value='?',
+            dtype=object), 'params': [{'n_estimators': 1500}, {'n_estimators': 2800}, {'n_estimators': 1800}, {'n_estimators': 1000}, {'n_estimators': 500}, {'n_estimators': 2000}, {'n_estimators': 1200}, {'n_estimators': 3000}, {'n_estimators': 2200}, {'n_estimators': 800}], 'split0_test_score': array([0.64936655, 0.64741505, 0.64858878, 0.65127563, 0.6422582 ,
+       0.65070526, 0.6487302 , 0.64676456, 0.64776859, 0.64700967]), 'split1_test_score': array([0.65265625, 0.64811639, 0.64954954, 0.64891782, 0.64277511,
+       0.64951654, 0.65135511, 0.64784296, 0.64932796, 0.64781468]), 'split2_test_score': array([0.64409282, 0.64035893, 0.64251346, 0.64284348, 0.63794982,
+       0.64396553, 0.64550717, 0.6411604 , 0.64155642, 0.64132069]), 'mean_test_score': array([0.64870536, 0.64529699, 0.6468841 , 0.64767921, 0.6409945 ,
+       0.64806263, 0.64853091, 0.64525613, 0.64621783, 0.64538184]), 'std_test_score': array([0.00352706, 0.00350323, 0.0031151 , 0.00355208, 0.00216309,
+       0.00293728, 0.00239152, 0.00292921, 0.00335683, 0.00289023]), 'rank_test_score': array([ 1,  8,  5,  4, 10,  3,  2,  9,  6,  7]), 'split0_train_score': array([0.9973458 , 1.        , 0.99963699, 0.97028989, 0.85819106,
+       0.99988214, 0.98733007, 1.        , 1.        , 0.93854081]), 'split1_train_score': array([0.9972988 , 1.        , 0.9994838 , 0.96927799, 0.85668327,
+       0.99993872, 0.98642801, 1.        , 1.        , 0.93795729]), 'split2_train_score': array([0.99716216, 1.        , 0.99975016, 0.9693612 , 0.85847319,
+       0.99993872, 0.98534174, 1.        , 1.        , 0.94094741]), 'mean_train_score': array([0.99726892, 1.        , 0.99962365, 0.96964303, 0.8577825 ,
+       0.99991986, 0.98636661, 1.        , 1.        , 0.9391485 ]), 'std_train_score': array([7.78914960e-05, 0.00000000e+00, 1.09147155e-04, 4.58664109e-04,
+       7.85766170e-04, 2.66705578e-05, 8.12892252e-04, 0.00000000e+00,
+       0.00000000e+00, 1.29413416e-03])}
+参数的最佳取值：{'n_estimators': 1500}
+最佳模型得分:0.6487053552712113
+
+Accuracy : 0.88
+Test confusion matrix
+[[3778  104   14    0    9   21   24   63]
+ [ 101 1854    2    1   22   44   89    9]
+ [  45    4 1015    0    3    0    2    3]
+ [   0    3    0  588   28   11    5    0]
+ [   4   17    1   19  767   62   31    0]
+ [   5   29    0   10   80  753   78    4]
+ [  33   89    0    9   69   80 1293   10]
+ [ 148   10    3    0    6    2    4  442]]
+F1
+[0.9297403716008368, 0.8761814744801513, 0.9634551495016612, 0.9318541996830428, 0.8137931034482758, 0.7795031055900622, 0.8317787069797362, 0.7713787085514834]
+precision
+[0.9183276616431697, 0.8786729857819905, 0.9806763285024155, 0.937799043062201, 0.7794715447154471, 0.7738951695786228, 0.8473132372214941, 0.832391713747646]
+recall
+[0.9414403189633691, 0.8737040527803959, 0.9468283582089553, 0.925984251968504, 0.8512763596004439, 0.7851929092805006, 0.8168035375868604, 0.71869918699187]
+Best model test F1_score
+0.7434071230279008
+{'n_estimators': 1500}
+
+（8）
+Model Setting：
+raw_data = pd.read_csv(r"E:\CCFDF\plansmatching\data\raw data\final_data\train_combine_4_encode_precentage.csv",
+                           encoding="utf-8",
+                           low_memory=False)
+other_params = {'learning_rate': 0.1, 'max_depth': 7, 'min_child_weight': 6, 'seed': 0,
+                        'gamma': 0, 'reg_alpha': 0, 'n_estimators': 1500,
+                        'reg_lambda': 1, 'n_jobs': -1, 'objective': 'binary:logistic'}
+        cv_params = {'subsample': [0.2, 0.4, 0.5, 0.6, 0.8], 'colsample_bytree': [0.2, 0.4, 0.5, 0.6, 0.8]}
+        model = xgb.XGBClassifier(**other_params)
+        optimized_GBM = RandomizedSearchCV(estimator=model, param_distributions=cv_params, scoring='r2', cv=3,
+                                           n_jobs=-1, n_iter=8)
+para_list = ['is_mix_service', 'online_time', '1_total_fee', '2_total_fee', '3_total_fee', '4_total_fee',
+                 '1_total_fee_norm', '2_total_fee_norm', '3_total_fee_norm', '4_total_fee_norm',
+                 'month_traffic', 'many_over_bill', 'contract_type', 'contract_time',
+                 'is_promise_low_consume', 'net_service', 'pay_times', 'pay_num', 'last_month_traffic',
+                 'local_trafffic_month', 'local_caller_time', 'service1_caller_time', 'service2_caller_time', 'gender',
+                 'age', 'complaint_level', 'former_complaint_num', 'former_complaint_fee',
+                 'fee_mean', 'fee_std', 'fee_fluctuate', 'fee_mean_2',
+                 'service_caller_time_fluctuate', 'online_time_norm', 'fee_mean_norm', 'fee_std_norm',
+                 'fee_fluctuate_norm', 'month_traffic_norm', 'contract_time_norm', 'pay_num_norm',
+                 'last_month_traffic_norm', 'local_trafffic_month_norm', 'local_caller_time_norm',
+                 'service1_caller_time_norm', 'service2_caller_time_norm', 'age_norm', 'former_complaint_num_norm',
+                 'former_complaint_fee_norm', 'fee_mean_2_norm', 'service_caller_time_fluctuate_norm',
+                 'month_traffic_precentage', 'contract_time_precentage',
+                 'pay_times_precentage', 'pay_num_precentage', 'last_month_traffic_precentage',
+                 'local_trafffic_month_precentage', 'local_caller_time_precentage', 'service1_caller_time_precentage',
+                 'service2_caller_time_precentage',
+                 'user_id']
+
+results:
+ 每轮迭代运行结果:{'mean_fit_time': array([19943.23481743, 17707.98594586, 20860.35647686, 14663.56849043,
+       19442.67475875, 16238.92925517, 14212.57549914, 11073.45256313,
+       11330.90124615, 12928.41703987]), 'std_fit_time': array([ 37.64341875, 247.37714971, 520.11522554, 264.41968196,
+        87.83770233, 933.59086403, 250.80039908, 232.42727689,
+        86.07245041, 401.05523616]), 'mean_score_time': array([263.38007847, 123.57549564, 107.2584211 , 115.41231537,
+       148.97349373, 103.61052577, 114.37275577, 168.34359725,
+       130.36455043,  70.54515513]), 'std_score_time': array([24.78168084, 18.56635968,  8.69529962,  1.08011241, 38.2670947 ,
+       11.49292005, 10.04438507, 27.91235714, 38.54254385,  9.03981504]), 'param_subsample': masked_array(data=[0.4, 0.4, 0.5, 0.8, 0.6, 0.5, 0.5, 0.6, 0.4, 0.8],
+             mask=[False, False, False, False, False, False, False, False,
+                   False, False],
+       fill_value='?',
+            dtype=object), 'param_colsample_bytree': masked_array(data=[0.8, 0.4, 0.8, 0.2, 0.8, 0.5, 0.4, 0.2, 0.2, 0.8],
+             mask=[False, False, False, False, False, False, False, False,
+                   False, False],
+       fill_value='?',
+            dtype=object), 'params': [{'subsample': 0.4, 'colsample_bytree': 0.8}, {'subsample': 0.4, 'colsample_bytree': 0.4}, {'subsample': 0.5, 'colsample_bytree': 0.8}, {'subsample': 0.8, 'colsample_bytree': 0.2}, {'subsample': 0.6, 'colsample_bytree': 0.8}, {'subsample': 0.5, 'colsample_bytree': 0.5}, {'subsample': 0.5, 'colsample_bytree': 0.4}, {'subsample': 0.6, 'colsample_bytree': 0.2}, {'subsample': 0.4, 'colsample_bytree': 0.2}, {'subsample': 0.8, 'colsample_bytree': 0.8}], 'split0_test_score': array([0.70851427, 0.70925775, 0.71389138, 0.71733404, 0.71621528,
+       0.71355292, 0.71077161, 0.71310967, 0.70393161, 0.71872045]), 'split1_test_score': array([0.69902314, 0.69728691, 0.70289494, 0.70728506, 0.70772549,
+       0.70249841, 0.69834054, 0.70217553, 0.6957093 , 0.70902978]), 'split2_test_score': array([0.69741293, 0.69918602, 0.70402946, 0.70826675, 0.70499248,
+       0.70128484, 0.70175361, 0.70486077, 0.69967603, 0.71385794]), 'mean_test_score': array([0.70165019, 0.7019103 , 0.70693867, 0.71096202, 0.7096445 ,
+       0.70577882, 0.70362199, 0.70671539, 0.69977235, 0.71386943]), 'std_test_score': array([0.00489803, 0.00525304, 0.00493816, 0.00452356, 0.00477841,
+       0.0055195 , 0.00524413, 0.00465251, 0.00335745, 0.00395622]), 'rank_test_score': array([ 9,  8,  4,  2,  3,  6,  7,  5, 10,  1]), 'split0_train_score': array([0.98754037, 0.97969682, 0.990884  , 0.97146026, 0.99204173,
+       0.98781866, 0.98474694, 0.97205931, 0.96274008, 0.98917112]), 'split1_train_score': array([0.98835123, 0.98070599, 0.99063411, 0.97145976, 0.99133582,
+       0.98752772, 0.98528378, 0.97077292, 0.96220787, 0.98986795]), 'split2_train_score': array([0.98809153, 0.98075299, 0.99131895, 0.97217462, 0.99173884,
+       0.98667183, 0.98442651, 0.97114224, 0.96338877, 0.99014071]), 'mean_train_score': array([0.98799438, 0.98038527, 0.99094568, 0.97169821, 0.99170546,
+       0.9873394 , 0.98481908, 0.97132482, 0.96277891, 0.98972659]), 'std_train_score': array([0.00033808, 0.00048719, 0.00028297, 0.00033687, 0.00028915,
+       0.00048676, 0.00035368, 0.00054081, 0.00048288, 0.00040826])}
+参数的最佳取值：{'subsample': 0.8, 'colsample_bytree': 0.8}
+最佳模型得分:0.7138694313138562
+
+
+Accuracy : 0.91
+Test confusion matrix
+[[12677   245    38     3    24    41    63   219]
+ [  250  6620     5     2    61   132   295    23]
+ [  109    22  3177     0     4     4     1     7]
+ [    0     0     1  1958    53    13     7     0]
+ [   13    26     1    45  2613   133    66     5]
+ [   28    71     2    13   259  2707   184     6]
+ [   86   226     1     7   158   247  4533    18]
+ [  422    25     5     0     6    12    22  1670]]
+F1
+[0.9427031046662948, 0.9054229638241126, 0.9694842844064694, 0.9645320197044335, 0.8595394736842105, 0.8254307059002897, 0.8678089403656553, 0.8126520681265207]
+precision
+[0.9331615752668384, 0.9149965445749827, 0.9835913312693498, 0.965483234714004, 0.8222152297042165, 0.8230465186986926, 0.8766196093598917, 0.8572895277207392]
+recall
+[0.9524417731029301, 0.8960476448294532, 0.9557761732851986, 0.9635826771653543, 0.9004135079255686, 0.82782874617737, 0.8591736163760425, 0.7724329324699353]
+Best model test F1_score
+0.7982469969578592
+{'subsample': 0.8, 'colsample_bytree': 0.8}
+
+
+
+(9)
+XGB Model optimization_1 setting:
+raw_data = pd.read_csv(r"E:\CCFDF\plansmatching\data\raw data\final_data\train_combine_4_encode_precentage.csv",
+                           encoding="utf-8",
+                           low_memory=False)
+
+    para_list = ['is_mix_service', 'online_time', '1_total_fee', '2_total_fee', '3_total_fee', '4_total_fee',
+                 '1_total_fee_norm', '2_total_fee_norm', '3_total_fee_norm', '4_total_fee_norm',
+                 'month_traffic', 'many_over_bill', 'contract_type', 'contract_time',
+                 'is_promise_low_consume', 'net_service', 'pay_times', 'pay_num', 'last_month_traffic',
+                 'local_trafffic_month', 'local_caller_time', 'service1_caller_time', 'service2_caller_time', 'gender',
+                 'age', 'complaint_level', 'former_complaint_num', 'former_complaint_fee',
+                 'fee_mean', 'fee_std', 'fee_fluctuate', 'fee_mean_2',
+                 'service_caller_time_fluctuate', 'online_time_norm', 'fee_mean_norm', 'fee_std_norm',
+                 'fee_fluctuate_norm', 'month_traffic_norm', 'contract_time_norm', 'pay_num_norm',
+                 'last_month_traffic_norm', 'local_trafffic_month_norm', 'local_caller_time_norm',
+                 'service1_caller_time_norm', 'service2_caller_time_norm', 'age_norm', 'former_complaint_num_norm',
+                 'former_complaint_fee_norm', 'fee_mean_2_norm', 'service_caller_time_fluctuate_norm',
+                 'month_traffic_precentage', 'contract_time_precentage',
+                 'pay_times_precentage', 'pay_num_precentage', 'last_month_traffic_precentage',
+                 'local_trafffic_month_precentage', 'local_caller_time_precentage', 'service1_caller_time_precentage',
+                 'service2_caller_time_precentage', 'user_id']
+    label_train, label_test, data_train, data_test = train_test_split(label, raw_data[par_list], test_size=0.02)
+m_class = xgb.XGBClassifier(learning_rate=0.1, n_estimators=1500, max_depth=7, min_child_weight=6, gamma=0,
+                                    subsample=0.8, n_jobs=-1, colsample_bytree=0.8, objective='binary:logistic', seed=0)
+
+
+results:
+Test Accuracy : 0.91
+Test confusion matrix
+[[2564   58   11    0    3    9   13   38]
+ [  41 1349    1    0    7   22   65    4]
+ [  20    2  655    0    0    0    0    3]
+ [   1    0    0  360    9    1    1    0]
+ [   1    4    0    8  537   28   16    1]
+ [  10   13    0    5   46  528   34    2]
+ [  16   49    0    2   25   38  918    4]
+ [  75    2    1    0    1    2    7  323]]
+F1
+[0.9454277286135693, 0.9096426163182737, 0.9718100890207716, 0.963855421686747, 0.8781684382665577, 0.834123222748815, 0.8717948717948718, 0.8218829516539441]
+precision
+[0.9398826979472141, 0.913337846987136, 0.9805389221556886, 0.96, 0.8550955414012739, 0.8407643312101911, 0.8709677419354839, 0.8613333333333333]
+recall
+[0.9510385756676558, 0.905977165883143, 0.9632352941176471, 0.967741935483871, 0.9025210084033614, 0.8275862068965517, 0.8726235741444867, 0.7858880778588808]
+test F1_score
+0.8092588711292962
+best F1
+0.8092588711292962
+Best learning rate
+0.1
+       
+
+(10)
+Class1 Model Setting:
+raw_data = pd.read_csv(r"E:\CCFDF\plansmatching\data\raw data\final_data\class_1_train_new.csv",
+                           encoding="utf-8", low_memory=False)
+para_list = ['is_mix_service', 'online_time', '1_total_fee', '2_total_fee', '3_total_fee', '4_total_fee',
+                 '1_total_fee_norm', '2_total_fee_norm', '3_total_fee_norm', '4_total_fee_norm',
+                 'month_traffic', 'many_over_bill', 'contract_type', 'contract_time',
+                 'is_promise_low_consume', 'net_service', 'pay_times', 'pay_num', 'last_month_traffic',
+                 'local_trafffic_month', 'local_caller_time', 'service1_caller_time', 'service2_caller_time', 'gender',
+                 'age', 'complaint_level', 'former_complaint_num', 'former_complaint_fee',
+                 'fee_mean', 'fee_std', 'fee_fluctuate', 'fee_mean_2',
+                 'service_caller_time_fluctuate', 'online_time_norm', 'fee_mean_norm', 'fee_std_norm',
+                 'fee_fluctuate_norm', 'month_traffic_norm', 'contract_time_norm', 'pay_num_norm',
+                 'last_month_traffic_norm', 'local_trafffic_month_norm', 'local_caller_time_norm',
+                 'service1_caller_time_norm', 'service2_caller_time_norm', 'age_norm', 'former_complaint_num_norm',
+                 'former_complaint_fee_norm', 'fee_mean_2_norm', 'service_caller_time_fluctuate_norm',
+                  'user_id']
+m_class = xgb.XGBClassifier(learning_rate=0.1, n_estimators=1500, max_depth=7, min_child_weight=6, gamma=0,
+                                    subsample=0.8, n_jobs=-1, colsample_bytree=0.8, objective='binary:logistic', seed=0)
+
+Results:
+Test Accuracy : 0.99
+Test confusion matrix
+[[5702    2   18]
+ [   3  757    5]
+ [  12    0  449]]
+F1
+[0.996940291983565, 0.9934383202099739, 0.962486602357985]
+precision
+[0.9973762462830156, 0.997364953886693, 0.951271186440678]
+recall
+[0.9965047186298497, 0.9895424836601308, 0.9739696312364425]
+test F1_score
+0.9688236639231577
+best F1
+0.9688236639231577
+Best learning rate
+0.1
+
+
+(10)
+model Setting:
+num_total = len(raw_data)
+random_site = random.sample(range(num_total), round(num_total * 0.3))
+para_list = ['is_mix_service', 'online_time', '1_total_fee', '2_total_fee', '3_total_fee', '4_total_fee',
+                 '1_total_fee_norm', '2_total_fee_norm', '3_total_fee_norm', '4_total_fee_norm',
+                 'month_traffic', 'many_over_bill', 'contract_type', 'contract_time',
+                 'is_promise_low_consume', 'net_service', 'pay_times', 'pay_num', 'last_month_traffic',
+                 'local_trafffic_month', 'local_caller_time', 'service1_caller_time', 'service2_caller_time', 'gender',
+                 'age', 'complaint_level', 'former_complaint_num', 'former_complaint_fee',
+                 'fee_mean', 'fee_std', 'fee_fluctuate', 'fee_mean_2',
+                 'service_caller_time_fluctuate', 'online_time_norm', 'fee_mean_norm', 'fee_std_norm',
+                 'fee_fluctuate_norm', 'month_traffic_norm', 'contract_time_norm', 'pay_num_norm',
+                 'last_month_traffic_norm', 'local_trafffic_month_norm', 'local_caller_time_norm',
+                 'service1_caller_time_norm', 'service2_caller_time_norm', 'age_norm', 'former_complaint_num_norm',
+                 'former_complaint_fee_norm', 'fee_mean_2_norm', 'service_caller_time_fluctuate_norm',
+                 'month_traffic_precentage', 'contract_time_precentage',
+                 'pay_times_precentage', 'pay_num_precentage', 'last_month_traffic_precentage',
+                 'local_trafffic_month_precentage', 'local_caller_time_precentage', 'service1_caller_time_precentage',
+                 'service2_caller_time_precentage',
+                 'user_id']
+other_params = {'learning_rate': 0.1, 'max_depth': 7, 'min_child_weight': 6, 'seed': 0,
+                        'gamma': 0, 'n_estimators': 1500, 'colsample_bytree': 0.8,
+                        {'subsample': 0.8, 'n_jobs': -1, 'objective': 'binary:logistic'}
+cv_params = {'reg_alpha': [0.05, 0.1, 0.5, 1, 2, 3], {'reg_lambda': [0.05, 0.1, 0.5, 1, 2, 3]}
+
+results:
+每轮迭代运行结果:{'mean_fit_time': array([9769.86469746, 9855.24005628, 9859.55429721, 9740.83728806,
+       9673.71270347, 9800.08129207, 9720.54772711, 9518.36209559,
+       7681.50165613, 7673.23960137]), 'std_fit_time': array([ 87.6995815 ,  67.66350504,  61.00488765,  56.88096382,
+        21.4822324 ,  56.14721024,  83.08468861,  61.20717603,
+        40.45333027, 128.56176267]), 'mean_score_time': array([221.77769923, 229.89142172, 231.7741015 , 226.19236263,
+       225.47914481, 230.44235245, 228.63725432, 208.94567887,
+       175.96239765, 193.24401021]), 'std_score_time': array([10.37580048,  8.50805198, 12.36324393,  3.72905591,  0.96081176,
+       12.04153447, 13.16092821, 15.18325262,  2.20594438,  6.44891093]), 'param_reg_lambda': masked_array(data=[0.1, 0.5, 0.5, 1, 0.1, 3, 2, 0.05, 1, 0.05],
+             mask=[False, False, False, False, False, False, False, False,
+                   False, False],
+       fill_value='?',
+            dtype=object), 'param_reg_alpha': masked_array(data=[1, 1, 0.5, 0.5, 2, 0.1, 0.05, 3, 2, 0.05],
+             mask=[False, False, False, False, False, False, False, False,
+                   False, False],
+       fill_value='?',
+            dtype=object), 'params': [{'reg_lambda': 0.1, 'reg_alpha': 1}, {'reg_lambda': 0.5, 'reg_alpha': 1}, {'reg_lambda': 0.5, 'reg_alpha': 0.5}, {'reg_lambda': 1, 'reg_alpha': 0.5}, {'reg_lambda': 0.1, 'reg_alpha': 2}, {'reg_lambda': 3, 'reg_alpha': 0.1}, {'reg_lambda': 2, 'reg_alpha': 0.05}, {'reg_lambda': 0.05, 'reg_alpha': 3}, {'reg_lambda': 1, 'reg_alpha': 2}, {'reg_lambda': 0.05, 'reg_alpha': 0.05}], 'split0_test_score': array([0.63712422, 0.63596517, 0.63978626, 0.63885336, 0.63510295,
+       0.63664835, 0.6422457 , 0.63753412, 0.63893817, 0.64406436]), 'split1_test_score': array([0.64237738, 0.63800481, 0.64090258, 0.64268836, 0.63844772,
+       0.64078479, 0.6452139 , 0.63629913, 0.6372839 , 0.64511024]), 'split2_test_score': array([0.63772766, 0.63760042, 0.6405504 , 0.63719044, 0.63449022,
+       0.63951838, 0.63976814, 0.63567304, 0.63741192, 0.63918851]), 'mean_test_score': array([0.6390764 , 0.63719009, 0.64041306, 0.63957743, 0.63601365,
+       0.63898376, 0.64240931, 0.63650215, 0.63787804, 0.64278784]), 'std_test_score': array([0.00234711, 0.00088179, 0.00046598, 0.00230213, 0.00173923,
+       0.00173052, 0.00222619, 0.00077323, 0.00075149, 0.00258052]), 'rank_test_score': array([ 5,  8,  3,  4, 10,  6,  2,  9,  7,  1]), 'split0_train_score': array([1.        , 1.        , 1.        , 1.        , 0.99987277,
+       1.        , 1.        , 0.99891857, 0.99975733, 1.        ]), 'split1_train_score': array([1.        , 1.        , 1.        , 1.        , 0.99988456,
+       1.        , 1.        , 0.99884556, 0.99988456, 1.        ]), 'split2_train_score': array([1.        , 1.        , 1.        , 1.        , 0.99992932,
+       1.        , 1.        , 0.99896578, 0.99969845, 1.        ]), 'mean_train_score': array([1.        , 1.        , 1.        , 1.        , 0.99989555,
+       1.        , 1.        , 0.99890997, 0.99978011, 1.        ]), 'std_train_score': array([0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,
+       2.43611293e-05, 0.00000000e+00, 0.00000000e+00, 4.94554936e-05,
+       7.76664487e-05, 0.00000000e+00])}
+参数的最佳取值：{'reg_lambda': 0.05, 'reg_alpha': 0.05}
+最佳模型得分:0.6427878390306978
+Accuracy : 0.87
+Test confusion matrix
+[[3784   90   13    0   10   12   25   85]
+ [ 110 1889    6    3   27   37  131    7]
+ [  43    4  990    1    0    0    2    5]
+ [   1    2    0  618   19    3    3    1]
+ [   6   15    1   21  693   51   36    2]
+ [  12   29    0   10   93  699   87    6]
+ [  30  104    3    5   48   92 1279    7]
+ [ 172   14    0    1    3    4   12  444]]
+F1
+[0.9255228078757491, 0.8671103970621987, 0.9620991253644315, 0.9464012251148546, 0.8067520372526192, 0.76226826608506, 0.8138720967228762, 0.7357083678541839]
+precision
+[0.91005291005291, 0.8798323241732651, 0.9772951628825272, 0.9377845220030349, 0.7760358342665173, 0.7783964365256125, 0.812063492063492, 0.7971274685816876]
+recall
+[0.9415277432197064, 0.8547511312217194, 0.9473684210526315, 0.955177743431221, 0.84, 0.7467948717948718, 0.8156887755102041, 0.683076923076923]
+Best model test F1_score
+0.7266996287630034
+{'reg_lambda': 0.05, 'reg_alpha': 0.05}
+
+
+{11}
+Model Setting:
+label_train, label_test, data_train, data_test = train_test_split(label, raw_data[par_list], test_size=0.02)
+para_list = ['is_mix_service', 'online_time', '1_total_fee', '2_total_fee', '3_total_fee', '4_total_fee',
+                 '1_total_fee_norm', '2_total_fee_norm', '3_total_fee_norm', '4_total_fee_norm',
+                 'month_traffic', 'many_over_bill', 'contract_type', 'contract_time',
+                 'is_promise_low_consume', 'net_service', 'pay_times', 'pay_num', 'last_month_traffic',
+                 'local_trafffic_month', 'local_caller_time', 'service1_caller_time', 'service2_caller_time', 'gender',
+                 'age', 'complaint_level', 'former_complaint_num', 'former_complaint_fee',
+                 'fee_mean', 'fee_std', 'fee_fluctuate', 'fee_mean_2',
+                 'service_caller_time_fluctuate', 'online_time_norm', 'fee_mean_norm', 'fee_std_norm',
+                 'fee_fluctuate_norm', 'month_traffic_norm', 'contract_time_norm', 'pay_num_norm',
+                 'last_month_traffic_norm', 'local_trafffic_month_norm', 'local_caller_time_norm',
+                 'service1_caller_time_norm', 'service2_caller_time_norm', 'age_norm', 'former_complaint_num_norm',
+                 'former_complaint_fee_norm', 'fee_mean_2_norm', 'service_caller_time_fluctuate_norm',
+                 'month_traffic_precentage', 'contract_time_precentage',
+                 'pay_times_precentage', 'pay_num_precentage', 'last_month_traffic_precentage',
+                 'local_trafffic_month_precentage', 'local_caller_time_precentage', 'service1_caller_time_precentage',
+                 'service2_caller_time_precentage', 'user_id']
+m_class = xgb.XGBClassifier(learning_rate=0.1, n_estimators=1500, max_depth=7, min_child_weight=6, gamma=0,
+                                    subsample=0.8, n_jobs=-1, colsample_bytree=0.8, objective='multi:softmax', num_class=8,
+                                    reg_alpha=0.05, reg_lambda=0.05, seed=0)
+
+results:
+Test Accuracy : 0.91
+Test confusion matrix
+[[2508   47    8    0    4    6   12   47]
+ [  56 1360    0    1    0   22   52    4]
+ [  25    8  629    0    0    0    0    2]
+ [   0    1    0  404   11    2    0    0]
+ [   3    3    0   16  497   28   20    0]
+ [   5   15    0    5   54  557   46    1]
+ [  13   46    0    2   35   35  937    4]
+ [  87    9    2    0    0    1    5  298]]
+F1
+[0.941264777631826, 0.9115281501340482, 0.9654643131235611, 0.9550827423167848, 0.851027397260274, 0.8350824587706147, 0.8740671641791045, 0.7862796833773087]
+precision
+[0.9299221357063404, 0.9133646742780389, 0.9843505477308294, 0.9439252336448598, 0.826955074875208, 0.8556067588325653, 0.8740671641791045, 0.8370786516853933]
+recall
+[0.952887537993921, 0.9096989966555183, 0.947289156626506, 0.9665071770334929, 0.8765432098765432, 0.8155197657393851, 0.8740671641791045, 0.7412935323383084]
+test F1_score
+0.7920547634574379
+best F1
+0.7920547634574379
+Best learning rate
+0.1
+
+
+(12)
+Model Setting:
+para_list = ['is_mix_service', 'online_time', '1_total_fee', '2_total_fee', '3_total_fee', '4_total_fee',
+             'month_traffic', 'many_over_bill', 'contract_type', 'contract_time',
+             'is_promise_low_consume', 'net_service', 'pay_times', 'pay_num', 'last_month_traffic',
+             'local_trafffic_month', 'local_caller_time', 'service1_caller_time', 'service2_caller_time', 'gender',
+             'age', 'complaint_level', 'former_complaint_num', 'former_complaint_fee', 'user_id']
+m_class = xgb.XGBClassifier(learning_rate=0.1, n_estimators=1500, max_depth=7, min_child_weight=6, gamma=0,,
+                                subsample=0.8, n_jobs=-1, reg_alpha=0.05, reg_lambda=0.05,
+                                colsample_bytree=0.8, objective='multi:softmax', num_class=8, seed=27)
+
+results:
+Accuracy : 0.91
+Test confusion matrix
+[[12596   226    43     0    14    44    76   215]
+ [  228  6610     5     3    50   109   319    24]
+ [  122    18  3299     0     0     0     1    12]
+ [    2     4     0  2012    45    10     7     0]
+ [   14    29     0    65  2693   148    63     3]
+ [   27    61     1    32   226  2686   183     6]
+ [   63   247     2     5   146   224  4482    23]
+ [  408    30    11     1    10    12    26  1643]]
+F1
+[0.9444402789232961, 0.9071570712962327, 0.9684426831058272, 0.9585516912815626, 0.8688498144862074, 0.8322230828814872, 0.8661706445067157, 0.8079665601180231]
+precision
+[0.9358098068350669, 0.914878892733564, 0.9815531091936923, 0.9499527856468366, 0.8457914572864321, 0.8308072997216208, 0.8691099476439791, 0.8530633437175493]
+recall
+[0.9532314212199182, 0.8995645073489384, 0.9556778679026651, 0.9673076923076923, 0.8932006633499171, 0.8336436995654872, 0.863251155624037, 0.7673984119570294]
+test F1_score
+0.7996387589727537
+best F1
+0.7996387589727537
+Best learning rate
+0.1
+
+
+
+(13)
+reprocess XGBoost
+model setting:
+raw_data = pd.read_csv(r"E:\CCFDF\plansmatching\data\raw data\final_data\train4_final.csv",
+                       encoding="utf-8", low_memory=False)
+para_list = ['is_mix_service', 'online_time', '1_total_fee', '2_total_fee', '3_total_fee', '4_total_fee', 'fee_distance',
+             '1_total_fee_norm', '2_total_fee_norm', '3_total_fee_norm', '4_total_fee_norm',
+             'month_traffic', 'many_over_bill', 'contract_type', 'contract_time',
+             'is_promise_low_consume', 'net_service', 'pay_times', 'pay_num', 'last_month_traffic',
+             'local_trafffic_month', 'local_caller_time', 'service1_caller_time', 'service2_caller_time', 'gender',
+             'age', 'complaint_level', 'former_complaint_num', 'former_complaint_fee',
+             'fee_mean', 'fee_std', 'fee_fluctuate', 'fee_mean_2',
+             'service_caller_time_fluctuate', 'service_caller_time_mean', 'online_time_norm', 'fee_mean_norm', 'fee_std_norm',
+             'fee_fluctuate_norm', 'fee_distance_norm', 'month_traffic_norm', 'contract_time_norm', 'pay_num_norm',
+             'last_month_traffic_norm', 'local_trafffic_month_norm', 'local_caller_time_norm',
+             'service1_caller_time_norm', 'service2_caller_time_norm', 'age_norm', 'former_complaint_num_norm',
+             'former_complaint_fee_norm', 'fee_mean_2_norm', 'service_caller_time_fluctuate_norm', 'service_caller_time_mean_norm',
+             'month_traffic_precentage', 'contract_time_precentage',
+             'pay_times_precentage', 'pay_num_precentage', 'last_month_traffic_precentage',
+             'local_trafffic_month_precentage', 'local_caller_time_precentage', 'service1_caller_time_precentage',
+             'service2_caller_time_precentage',
+             'user_id']
+data_submit_raw = pd.read_csv(r"E:\CCFDF\plansmatching\data\raw data\final_data\test4_final.csv",
+                              encoding="utf-8", low_memory=False)
+
+m_class = xgb.XGBClassifier(learning_rate=0.1, n_estimators=1500, max_depth=7, min_child_weight=6, gamma=0,
+                                subsample=0.8, n_jobs=-1, reg_alpha=0.05, reg_lambda=0.05,
+                                colsample_bytree=0.8, objective='multi:softmax', num_class=8, seed=27)
+
+results:
+Accuracy : 0.91
+Test confusion matrix
+[[2553   39    7    0    4    7    9   43]
+ [  39 1269    0    3   10   28   60    2]
+ [  25    2  642    0    0    1    0    2]
+ [   0    0    0  375    9    1    0    0]
+ [   0   10    0   11  530   30   12    0]
+ [   7   16    0    5   49  594   45    1]
+ [  17   42    1    3   31   51  891    5]
+ [  86   10    2    0    2    1    1  350]]
+F1
+[0.9474856188532195, 0.9067524115755629, 0.9697885196374622, 0.9590792838874681, 0.8631921824104234, 0.8307692307692308, 0.8654686741136475, 0.8187134502923976]
+precision
+[0.9361936193619362, 0.9142651296829971, 0.9846625766871165, 0.9445843828715366, 0.8346456692913385, 0.8330995792426368, 0.8752455795677799, 0.8684863523573201]
+recall
+[0.959053343350864, 0.8993621545003544, 0.9553571428571429, 0.974025974025974, 0.893760539629005, 0.8284518828451883, 0.8559077809798271, 0.7743362831858407]
+test F1_score
+0.8013045712714629
+best F1
+0.8013045712714629
+Best learning rate
+0.1
+
+
+(14)
+XGBVote
+model setting: 
+raw_data = pd.read_csv(r"/data/projects/CCFDF_18/data/train4_final.csv",
+                       encoding="utf-8", low_memory=False)
+data_submit_raw = pd.read_csv(r"/data/projects/CCFDF_18/data/test4_final.csv",
+                               encoding="utf-8", low_memory=False)
+m_class = xgb.XGBClassifier(learning_rate=0.1, n_estimators=1500, max_depth=7, min_child_weight=6, gamma=0,
+                                subsample=0.8, n_jobs=-1, reg_alpha=0.05, reg_lambda=0.05,
+                                colsample_bytree=0.8, objective='multi:softmax', num_class=8, seed=27)
+para_list = ['is_mix_service', 'online_time', '1_total_fee', '2_total_fee', '3_total_fee', '4_total_fee', 'fee_distance',
+             '1_total_fee_norm', '2_total_fee_norm', '3_total_fee_norm', '4_total_fee_norm',
+             'month_traffic', 'many_over_bill', 'contract_type', 'contract_time',
+             'is_promise_low_consume', 'net_service', 'pay_times', 'pay_num', 'pay_mean', 'last_month_traffic',
+             'local_trafffic_month', 'local_caller_time', 'service1_caller_time', 'service2_caller_time', 'gender',
+             'age', 'complaint_level', 'former_complaint_num', 'former_complaint_fee',
+             'fee_mean', 'fee_std', 'fee_fluctuate', 'fee_mean_2',
+             'service_caller_time_fluctuate', 'service_caller_time_mean', 'online_time_norm', 'fee_mean_norm', 'fee_std_norm',
+             'fee_fluctuate_norm', 'fee_distance_norm', 'month_traffic_norm', 'contract_time_norm', 'pay_num_norm',
+             'last_month_traffic_norm', 'local_trafffic_month_norm', 'local_caller_time_norm',
+             'service1_caller_time_norm', 'service2_caller_time_norm', 'age_norm', 'former_complaint_num_norm',
+             'former_complaint_fee_norm', 'fee_mean_2_norm', 'service_caller_time_fluctuate_norm', 'service_caller_time_mean_norm',
+             'month_traffic_precentage', 'contract_time_precentage',
+             'pay_times_precentage', 'pay_num_precentage', 'last_month_traffic_precentage',
+             'local_trafffic_month_precentage', 'local_caller_time_precentage', 'service1_caller_time_precentage',
+             'service2_caller_time_precentage',
+             'user_id']
+
+results:
+Accuracy : 0.91
+Test confusion matrix
+[[2497   39    8    1    3   12   10   36]
+ [  53 1322    2    0   10   29   58    4]
+ [  26    4  627    0    0    2    1    4]
+ [   0    1    0  380    9    3    1    0]
+ [   1    4    0   14  504   31   13    1]
+ [   8   11    1    2   49  596   35    2]
+ [  14   32    0    1   34   49  942    3]
+ [  79    5    0    0    0    2    8  350]]
+F1
+[0.945117335352006, 0.9129834254143646, 0.9631336405529953, 0.9595959595959597, 0.8564146134239593, 0.8347338935574229, 0.8791413905739618, 0.8293838862559242]
+precision
+[0.9324122479462286, 0.9322990126939351, 0.9827586206896551, 0.9547738693467337, 0.8275862068965517, 0.8232044198895028, 0.8820224719101124, 0.875]
+recall
+[0.9581734458940906, 0.8944519621109608, 0.9442771084337349, 0.9644670050761421, 0.8873239436619719, 0.8465909090909091, 0.8762790697674419, 0.7882882882882883]
+test F1_score
+0.805619371444309
+best F1
+0.805619371444309
+Best learning rate
+0.1
+
+
+(15)
+attributes select
+raw_data = pd.read_csv(r"E:\CCFDF\plansmatching\data\raw data\final_data\train4_feature_2.csv",
+                       encoding="utf-8", low_memory=False)
+para_list = ['is_mix_service', 'online_time', '1_total_fee', '2_total_fee', '3_total_fee', '4_total_fee',
+             'fee_distance', 'fee_min', 'traffic_current_month',
+             'month_traffic', 'many_over_bill', 'contract_type', 'contract_time',
+             'is_promise_low_consume', 'net_service', 'pay_times', 'pay_num', 'last_month_traffic',
+             'local_trafffic_month', 'local_caller_time', 'service1_caller_time', 'service2_caller_time', 'gender',
+             'age', 'complaint_level', 'former_complaint_num', 'former_complaint_fee',
+             'fee_mean', 'fee_std', 'fee_fluctuate', 'fee_mean_2',
+             'service_caller_time_fluctuate', 'service_caller_time_mean',
+             "fee_mat_subtract_01", "fee_mat_subtract_12", "fee_mat_subtract_23", "fee_mat_subtract_0112",
+             "fee_mat_subtract_1223", "fee_mat_sum_01", "fee_mat_sum_12", "fee_mat_sum_23", "fee_mat_sum_0112",
+             "pay_mean", "online_time_per_fee", "month_traffic_per_fee", "contract_time_per_fee",
+             "last_month_traffic_per_fee", "local_trafffic_month_per_fee", "local_caller_time_per_fee",
+             "service_caller_time_mean_per_fee", "pay_fee_subtract", "pay_total", "pay_fee_total_subtract",
+             'user_id']
+label_train, label_test, data_train, data_test = train_test_split(label, raw_data[par_list], test_size=0.005)
+m_class = xgb.XGBClassifier(learning_rate=0.1, n_estimators=2000, max_depth=7, min_child_weight=6, gamma=0,
+                                subsample=0.8, n_jobs=-1, reg_alpha=0.05, reg_lambda=0.05,
+                                colsample_bytree=0.8, objective='multi:softmax', num_class=8, seed=27)
+
+results:
+Accuracy : 0.92
+Test confusion matrix
+[[666   7   4   0   0   3   4   7]
+ [  8 335   1   0   4  13   7   0]
+ [  4   0 170   0   0   0   0   1]
+ [  0   1   0  95   1   0   0   0]
+ [  0   1   0   4 111   6   1   0]
+ [  2   2   0   1  13 127   9   0]
+ [  4  10   0   1   5  12 233   2]
+ [ 24   0   1   0   0   0   0  84]]
+F1
+[0.9521086490350251, 0.925414364640884, 0.9686609686609686, 0.9595959595959594, 0.8638132295719844, 0.8063492063492065, 0.8944337811900193, 0.8275862068965517]
+precision
+[0.940677966101695, 0.9410112359550562, 0.9659090909090909, 0.9405940594059405, 0.8283582089552238, 0.7888198757763976, 0.9173228346456693, 0.8936170212765957]
+recall
+[0.9638205499276411, 0.9103260869565217, 0.9714285714285714, 0.979381443298969, 0.9024390243902439, 0.8246753246753247, 0.8726591760299626, 0.7706422018348624]
+test F1_score
+0.8095415972108934
+best F1
+0.8095415972108934
+Best learning rate
+0.1
+
+
+
+(16)
+Open model parameters
+Model setting:
+raw_data = pd.read_csv(r"E:\CCFDF\plansmatching\data\raw data\final_data\train4_feature_2.csv",
+                       encoding="utf-8", low_memory=False)
+para_list = ['is_mix_service', 'online_time', '1_total_fee', '2_total_fee', '3_total_fee', '4_total_fee',
+             'fee_distance', 'fee_min', 'traffic_current_month',
+             'month_traffic', 'many_over_bill', 'contract_type', 'contract_time',
+             'is_promise_low_consume', 'net_service', 'pay_times', 'pay_num', 'last_month_traffic',
+             'local_trafffic_month', 'local_caller_time', 'service1_caller_time', 'service2_caller_time', 'gender',
+             'age', 'complaint_level', 'former_complaint_num', 'former_complaint_fee',
+             'fee_mean', 'fee_std', 'fee_fluctuate', 'fee_mean_2',
+             'service_caller_time_fluctuate', 'service_caller_time_mean',
+             "fee_mat_subtract_01", "fee_mat_subtract_12", "fee_mat_subtract_23", "fee_mat_subtract_0112",
+             "fee_mat_subtract_1223", "fee_mat_sum_01", "fee_mat_sum_12", "fee_mat_sum_23", "fee_mat_sum_0112",
+             "pay_mean", "online_time_per_fee", "month_traffic_per_fee", "contract_time_per_fee",
+             "last_month_traffic_per_fee", "local_trafffic_month_per_fee", "local_caller_time_per_fee",
+             "service_caller_time_mean_per_fee", "pay_fee_subtract", "pay_total", "pay_fee_total_subtract",
+             'user_id']
+label_train, label_test, data_train, data_test = train_test_split(label, raw_data[par_list], test_size=0.02)
+eta_list = [0.05]
+m_class = xgb.XGBClassifier(
+        max_depth=12, learning_rate=0.05, n_estimators=752, silent=True, objective='multi:softmax', gamma=0,
+        max_delta_step=0, subsample=1, colsample_bytree=0.9, colsample_bylevel=0.9, reg_alpha=1, reg_lambda=1,
+        scale_pos_weight=1, base_score=0.5, seed=2018, missing=None, num_class=8, n_jobs=-1)
+
+results:
+importance feature
+['former_complaint_num' 'net_service' 'former_complaint_fee'
+ 'is_mix_service' 'complaint_level' 'is_promise_low_consume'
+ 'many_over_bill' 'pay_times' 'gender' 'contract_time'
+ 'service1_caller_time' 'fee_mat_sum_0112' 'pay_num' 'fee_mean'
+ 'fee_mat_sum_12' 'pay_total' 'last_month_traffic_per_fee' 'contract_type'
+ 'fee_mat_sum_01' 'service_caller_time_mean' 'fee_mat_sum_23' 'fee_std'
+ '2_total_fee' 'fee_mat_subtract_12' 'fee_mat_subtract_1223'
+ 'fee_mat_subtract_23' 'fee_distance' 'fee_mat_subtract_0112'
+ 'local_caller_time_per_fee' 'fee_mat_subtract_01'
+ 'local_trafffic_month_per_fee' 'local_caller_time' 'fee_mean_2'
+ 'month_traffic' '3_total_fee' '4_total_fee' 'local_trafffic_month'
+ 'pay_mean' 'last_month_traffic' 'service_caller_time_mean_per_fee'
+ 'pay_fee_total_subtract' 'contract_time_per_fee' 'fee_fluctuate'
+ 'pay_fee_subtract' 'month_traffic_per_fee' 'service2_caller_time'
+ 'traffic_current_month' 'service_caller_time_fluctuate' 'age'
+ '1_total_fee' 'online_time' 'online_time_per_fee' 'fee_min']
+feature score
+[0.00097696 0.00122561 0.00218773 0.00247453 0.00285246 0.00410633
+ 0.00469511 0.00538598 0.00618527 0.01001186 0.01219536 0.01292861
+ 0.01359475 0.01370388 0.01418318 0.01494362 0.01516049 0.01533427
+ 0.01646628 0.01651255 0.01725957 0.01824995 0.01935688 0.01949887
+ 0.01981004 0.02006329 0.02018267 0.02020916 0.02077181 0.02249014
+ 0.02268299 0.02270842 0.02295601 0.02327531 0.02329155 0.02340422
+ 0.02386091 0.02441332 0.02458816 0.02492193 0.02505792 0.0252105
+ 0.02606666 0.02654949 0.02669183 0.02823779 0.02834234 0.02940972
+ 0.03019983 0.03066712 0.03295799 0.03413026 0.03735853]
+Accuracy : 0.92
+Test confusion matrix
+[[1298   27    3    0    2    3    7   22]
+ [  23  697    2    1    4    9   26    2]
+ [   7    0  336    0    0    0    0    2]
+ [   0    0    0  185    0    0    0    0]
+ [   2    1    0   11  255   12    5    0]
+ [   0    6    0    0   13  260   21    1]
+ [   4   25    0    2    9   25  448    3]
+ [  39    4    2    0    2    0    1  160]]
+F1
+[0.9491773308957953, 0.9146981627296588, 0.9767441860465117, 0.9635416666666667, 0.893169877408056, 0.8524590163934426, 0.875, 0.8040201005025126]
+precision
+[0.945375091041515, 0.9171052631578948, 0.9795918367346939, 0.9296482412060302, 0.8947368421052632, 0.8414239482200647, 0.8818897637795275, 0.8421052631578947]
+recall
+[0.9530102790014684, 0.912303664921466, 0.9739130434782609, 1.0, 0.8916083916083916, 0.8637873754152824, 0.8682170542635659, 0.7692307692307693]
+test F1_score
+0.8164952959528439
+best F1
+0.8164952959528439
+Best learning rate
+0.05
+
+
+
+(17)
+Model Setting:
+raw_data = pd.read_csv(r"E:\CCFDF\plansmatching\data\raw data\final_data\train4_feature_2.csv",
+                       encoding="utf-8", low_memory=False)
+label_train, label_test, data_train, data_test = train_test_split(label, raw_data[par_list], test_size=0.04)
+eta_list = [0.15]
+m_class = xgb.XGBClassifier(learning_rate=eta, n_estimators=1500, max_depth=7, min_child_weight=6, gamma=0,
+                                subsample=0.8, n_jobs=-1, reg_alpha=0.05, reg_lambda=0.05,
+                                colsample_bytree=0.8, objective='multi:softmax', num_class=8, seed=27)
+
+
+
+
+Resuts:
+Accuracy : 0.89
+Test confusion matrix
+[[5047  127   22    1   13   20   40   77]
+ [ 119 2632    3    5   36   59  114    8]
+ [  87    3 1174    0    0    0    3    3]
+ [   0    2    0  773   21    6    5    0]
+ [   9   33    0   18  992   73   48    0]
+ [  23   51    0   13   97  995   95    5]
+ [  41  130    1    7   79   89 1750   14]
+ [ 169   19    5    0    3    7   12  688]]
+F1
+[0.9310090389227079, 0.881299179641721, 0.9486868686868687, 0.9519704433497538, 0.8218724109362054, 0.7871835443037974, 0.8377213977979896, 0.8103651354534747]
+precision
+[0.9184713375796179, 0.8782115448782115, 0.9742738589211618, 0.9461444308445532, 0.7993553585817889, 0.7966373098478783, 0.8466376390904693, 0.8654088050314466]
+recall
+[0.9438937722087152, 0.8844086021505376, 0.9244094488188976, 0.9578686493184635, 0.8456947996589941, 0.777951524628616, 0.8289909995262909, 0.7619047619047619]
+test F1_score
+0.7591000905909034
+best F1
+0.7591000905909034
+Best learning rate
+0.15
+
+
+importance feature
+['age' 'last_month_traffic' 'month_traffic' 'local_trafffic_month'
+ 'online_time' 'local_trafffic_month_per_fee' 'month_traffic_per_fee'
+ 'traffic_current_month' 'fee_fluctuate' '4_total_fee'
+ 'pay_fee_total_subtract' 'online_time_per_fee' 'fee_mean_2' '2_total_fee'
+ 'pay_fee_subtract' '1_total_fee' 'contract_time_per_fee' 'fee_min'
+ 'service_caller_time_fluctuate' 'service_caller_time_mean_per_fee']
+feature score
+[0.03459088 0.03583813 0.03769642 0.03817989 0.03828225 0.0404366
+ 0.04287442 0.04412797 0.05046504 0.05058945 0.05308082 0.0532194
+ 0.05471548 0.05492965 0.05522414 0.05617848 0.05803204 0.06329194
+ 0.06824789 0.06999908]
+
+
+
+
+(18)
+remote_xgb_para_select
+model setting:
+raw_data = pd.read_csv(r"/data/projects/CCFDF_18/data/train4_feature_2.csv",
+                       encoding="utf-8", low_memory=False)
+data_submit_raw = pd.read_csv(
+    r"/data/projects/CCFDF_18/data/test4_feature_2.csv",
+    encoding="utf-8", low_memory=False)
+m_class = xgb.XGBClassifier(learning_rate=0.1, n_estimators=1500, max_depth=7, min_child_weight=6, gamma=0,
+                            subsample=0.8, n_jobs=-1, reg_alpha=0.05, reg_lambda=0.05,
+                            colsample_bytree=0.8, objective='multi:softmax', num_class=8, seed=27)
+ para_list = ['fee_min', 'online_time_per_fee', '1_total_fee', '2_total_fee', '3_total_fee', '4_total_fee',
+              'traffic_current_month', 'service_caller_time_fluctuate', 'online_time', 'month_traffic_per_fee',
+              'pay_fee_subtract', 'pay_fee_total_subtract', 'contract_time_per_fee', 'fee_fluctuate', 'month_traffic',
+            'service2_caller_time', 'service_caller_time_mean_per_fee', 'local_trafffic_month_per_fee',
+              'local_trafffic_month', 'age', 'fee_mean_2', 'last_month_traffic', 'local_caller_time', 'fee_mean',
+              'pay_num', 'fee_std', 'fee_distance',
+              'user_id']
+
+
+results
+Accuracy : 0.89
+Test confusion matrix
+[[2464   59   11    0    6   14   20   44]
+ [  68 1291    3    1   14   28   67    4]
+ [  36    0  661    0    0    0    0    4]
+ [   1    2    0  403   14    3    1    0]
+ [   3   12    0    7  508   27   16    0]
+ [  10   17    0    2   39  543   34    2]
+ [  31   48    0    3   35   53  902    9]
+ [  80    7    1    1    0    1    6  317]]
+F1
+[0.9278855206175862, 0.8866758241758241, 0.9600580973129993, 0.9583828775267539, 0.8544995794785534, 0.8252279635258359, 0.8481429243065349, 0.7994955863808323]
+precision
+[0.9149647233568511, 0.899025069637883, 0.977810650887574, 0.9664268585131894, 0.8246753246753247, 0.8116591928251121, 0.8623326959847036, 0.8342105263157895]
+recall
+[0.9411764705882353, 0.8746612466124661, 0.9429386590584878, 0.9504716981132075, 0.8865619546247818, 0.839258114374034, 0.8344125809435707, 0.7675544794188862]
+test F1_score
+0.7788875244851059
+importance feature
+['pay_num' 'fee_mean' 'fee_distance' 'age' 'local_trafffic_month'
+ 'month_traffic' 'local_trafffic_month_per_fee' 'fee_std' 'online_time'
+ 'month_traffic_per_fee' 'last_month_traffic' '4_total_fee'
+ 'local_caller_time' 'traffic_current_month' 'fee_fluctuate' 'fee_mean_2'
+ 'pay_fee_subtract' '2_total_fee' 'service_caller_time_mean_per_fee'
+ 'pay_fee_total_subtract' 'service2_caller_time' '3_total_fee'
+ 'online_time_per_fee' '1_total_fee' 'service_caller_time_fluctuate'
+ 'fee_min' 'contract_time_per_fee']
+feature score
+[0.0215367  0.02696909 0.02905037 0.03002945 0.03031575 0.03146691
+ 0.03199947 0.03214188 0.03415937 0.03464742 0.03550634 0.0365403
+ 0.03768552 0.03770036 0.03799853 0.03808605 0.03860823 0.03987806
+ 0.04032161 0.04043435 0.04108559 0.04123245 0.0423213  0.044051
+ 0.0442394  0.05072949 0.05126501]
+
+
+
+
+(19)
+log 
+Model setting
+raw_data = pd.read_csv(r"E:\CCFDF\plansmatching\data\raw data\final_data\train4_feature_2.csv",
+                       encoding="utf-8", low_memory=False)
+label_train, label_test, data_train, data_test = train_test_split(label, raw_data[par_list], test_size=0.03)
+m_class = xgb.XGBClassifier(learning_rate=0.1, n_estimators=1500, max_depth=7, min_child_weight=6, gamma=0,
+                                subsample=0.8, n_jobs=-1, reg_alpha=0.05, reg_lambda=0.05,
+                                colsample_bytree=0.8, objective='multi:softmax', num_class=8, seed=27)
+para_list = ['is_mix_service', 'online_time', '1_total_fee', '2_total_fee', '3_total_fee', '4_total_fee',
+                 '1_total_fee_log', '2_total_fee_log', '3_total_fee_log', '4_total_fee_log',
+                 'month_traffic', 'many_over_bill', 'contract_type', 'contract_time',
+                 'is_promise_low_consume', 'net_service', 'pay_times', 'pay_num', 'last_month_traffic',
+                 'local_trafffic_month', 'local_caller_time', 'service1_caller_time', 'service2_caller_time', 'gender',
+                 'age', 'complaint_level', 'former_complaint_num', 'former_complaint_fee',
+                 'fee_mean', 'fee_std', 'fee_fluctuate', 'fee_mean_2', 'fee_min', 'traffic_current_month',
+                 'service_caller_time_fluctuate', 'online_time_log', 'fee_mean_log', 'fee_std_log',
+                 'fee_fluctuate_log', 'month_traffic_log', 'contract_time_log', 'pay_num_log',
+                 'last_month_traffic_log', 'local_trafffic_month_log', 'local_caller_time_log',
+                 'service1_caller_time_log', 'service2_caller_time_log', 'age_log', 'former_complaint_num_log',
+                 'former_complaint_fee_log', 'fee_mean_2_log', 'service_caller_time_fluctuate_log',
+                 'month_traffic_precentage', 'contract_time_precentage',
+                 'pay_times_precentage', 'pay_num_precentage', 'last_month_traffic_precentage',
+                 'local_trafffic_month_precentage', 'local_caller_time_precentage', 'service1_caller_time_precentage',
+                 'service2_caller_time_precentage', 'user_id']
+
+
+
+
+results:
+Accuracy : 0.91
+Test confusion matrix
+[[3805   83   17    0    4   11   12   57]
+ [  79 1985    0    1   22   26   88    6]
+ [  32    6  973    0    0    2    0    4]
+ [   1    0    0  608   15    4    2    0]
+ [   3    7    0   19  763   28   27    0]
+ [  11   19    0    8   77  779   57    3]
+ [  24   67    1    1   56   63 1369    7]
+ [ 125    8    2    1    3    2   10  517]]
+F1
+[0.9431156277109927, 0.9059790050205386, 0.9681592039800995, 0.9589905362776026, 0.8539451594851707, 0.8336008560727661, 0.8683793212813193, 0.8193343898573692]
+precision
+[0.9325980392156863, 0.9126436781609195, 0.9798590130916415, 0.9529780564263323, 0.8117021276595745, 0.8513661202185793, 0.8747603833865815, 0.8703703703703703]
+recall
+[0.9538731511657057, 0.8994109651110104, 0.9567354965585054, 0.9650793650793651, 0.9008264462809917, 0.8165618448637316, 0.8620906801007556, 0.7739520958083832]
+test F1_score
+0.7991251701222445
+importance feature
+['former_complaint_num_log' 'contract_time_precentage'
+ 'former_complaint_fee_log' 'former_complaint_num' 'net_service'
+ 'service2_caller_time_precentage' 'month_traffic_precentage'
+ 'last_month_traffic_precentage' 'local_trafffic_month_precentage'
+ 'pay_num_precentage' 'pay_times_precentage' 'is_mix_service'
+ 'former_complaint_fee' 'complaint_level' 'service1_caller_time_log'
+ 'contract_time_log' 'is_promise_low_consume' 'many_over_bill' 'gender'
+ 'age_log' 'pay_num_log' 'local_caller_time_log' 'fee_mean_log'
+ 'local_caller_time_precentage' 'last_month_traffic_log' 'fee_mean_2_log'
+ 'fee_fluctuate_log' 'service_caller_time_fluctuate_log' '4_total_fee_log'
+ 'service1_caller_time_precentage' 'online_time_log'
+ 'service2_caller_time_log' 'local_trafffic_month_log' 'fee_std_log'
+ '2_total_fee_log' 'pay_times' '3_total_fee_log' '1_total_fee_log'
+ 'month_traffic_log' 'service1_caller_time' 'contract_time'
+ 'contract_type' 'age' 'pay_num' 'fee_mean' 'local_caller_time'
+ 'last_month_traffic' 'fee_fluctuate' 'fee_mean_2'
+ 'service_caller_time_fluctuate' '4_total_fee' 'local_trafffic_month'
+ 'service2_caller_time' 'online_time' '2_total_fee' 'fee_std'
+ '3_total_fee' '1_total_fee' 'month_traffic']
+feature score
+[0.00022616 0.0005247  0.00058501 0.00096346 0.00099964 0.00118058
+ 0.00150173 0.00156204 0.00156958 0.00230536 0.00232647 0.00236115
+ 0.00252248 0.00253002 0.00268683 0.00321756 0.00428204 0.00597374
+ 0.00622101 0.00632957 0.00676079 0.00731565 0.00735334 0.0074423
+ 0.00765188 0.00825197 0.00831981 0.00857915 0.00874953 0.0089199
+ 0.00916114 0.00920185 0.00922899 0.00955467 0.00977932 0.01044274
+ 0.01044877 0.01151325 0.01217515 0.01311901 0.01655369 0.02174942
+ 0.03103873 0.03342551 0.03378285 0.03487447 0.03632794 0.03957867
+ 0.04060998 0.041293   0.04313095 0.04375969 0.04536998 0.04620527
+ 0.04731347 0.04776731 0.05225591 0.05400642 0.05711843]
+
+
+（20）
+model setting:
+raw_data = pd.read_csv(r"E:\CCFDF\plansmatching\data\raw data\final_data\Chanle_B\train_4_feature_select.csv",
+                       encoding="utf-8", low_memory=False)
+para_list = ['online_time', '1_total_fee', '2_total_fee', '3_total_fee', '4_total_fee',
+             'fee_distance',
+             'month_traffic', 'many_over_bill', 'contract_type', 'contract_time', 'roaming_traffic', 'fee_pay_subtract',
+             'pay_num', 'last_month_traffic', 'local_trafffic_month', 'local_caller_time', 'service1_caller_time',
+             'service2_caller_time', 'age', 'fee_mean', 'fee_std', 'fee_fluctuate', 'fee_mean_2',
+             'service_caller_time_fluctuate', 'service_caller_time_mean',
+             'fee_mat_subtract_01', 'fee_mat_subtract_12', 'fee_mat_subtract_23', 'fee_mat_sum_01', 'fee_mat_sum_12',
+             'fee_mat_sum_23', 'fee_mat_sum_0112', 'pay_mean', 'online_time_per_fee', 'month_traffic_per_fee',
+             'contract_time_per_fee', 'last_month_traffic_per_fee', 'local_trafffic_month_per_fee',
+             'service_caller_time_mean_per_fee', 'pay_fee_subtract', 'pay_total', 'fee_min', 'traffic_current_month']
+label_train, label_test, data_train, data_test = train_test_split(label, raw_data[par_list], test_size=0.03)
+
+m_class = xgb.XGBClassifier(learning_rate=0.1, n_estimators=1500, max_depth=7, min_child_weight=6, gamma=0,
+                            subsample=0.8, n_jobs=-1, reg_alpha=0.05, reg_lambda=0.05,
+                            colsample_bytree=0.8, objective='multi:softmax', num_class=8, seed=27)
+
+results:
+Accuracy : 0.91
+Test confusion matrix
+[[3820   84   13    1    7    9   15   49]
+ [  63 1983    1    1   15   32   84    8]
+ [  34    4  974    0    0    1    0    3]
+ [   1    0    0  601   16    6    2    1]
+ [   3    6    0   12  816   46   20    5]
+ [   6   28    0    8   75  798   39    3]
+ [  19   50    1    5   55   95 1370    5]
+ [ 101    9    3    0    2    3   10  479]]
+F1
+[0.949658172778123, 0.9115145943461274, 0.9701195219123506, 0.9577689243027888, 0.8616684266103485, 0.8197226502311248, 0.8726114649681528, 0.8258620689655173]
+precision
+[0.9439090684457623, 0.916358595194085, 0.9818548387096774, 0.9570063694267515, 0.8275862068965517, 0.806060606060606, 0.8896103896103896, 0.8661844484629295]
+recall
+[0.9554777388694348, 0.906721536351166, 0.9586614173228346, 0.9585326953748007, 0.8986784140969163, 0.8338557993730408, 0.85625, 0.7891268533772653]
+test F1_score
+0.8030233979946289
+
+importance feature
+['contract_time_norm' 'is_mix_service' 'service2_caller_time_norm'
+ 'gender' 'last_month_traffic_norm' 'many_over_bill' 'online_time_norm'
+ 'service_caller_time_fluctuate_norm' 'contract_time'
+ 'service1_caller_time' 'pay_num' 'last_month_traffic_per_fee' 'fee_mean'
+ 'fee_mat_sum_0112' 'pay_total' 'fee_mat_sum_12' 'contract_type'
+ 'service_caller_time_mean' 'fee_mat_sum_01' 'fee_mat_sum_23' 'pay_mean'
+ '2_total_fee' 'local_trafffic_month' 'fee_distance' 'age'
+ 'local_trafffic_month_per_fee' 'fee_std' 'fee_mat_subtract_23'
+ 'fee_mean_2' 'last_month_traffic' 'service2_caller_time'
+ 'fee_mat_subtract_12' 'service_caller_time_mean_per_fee' '4_total_fee'
+ 'fee_mat_subtract_01' '3_total_fee' 'contract_time_per_fee'
+ 'fee_pay_subtract' 'fee_fluctuate' 'pay_fee_subtract' 'online_time'
+ 'local_caller_time' 'service_caller_time_fluctuate'
+ 'month_traffic_per_fee' 'month_traffic' 'online_time_per_fee'
+ '1_total_fee' 'roaming_traffic' 'fee_min']
+feature score
+[0.00194782 0.0019746  0.00464262 0.00489856 0.00501314 0.00529735
+ 0.0059863  0.00600118 0.00980903 0.01103367 0.01246961 0.01364514
+ 0.01458557 0.01478943 0.01527452 0.01591735 0.01603788 0.01708693
+ 0.01793064 0.01865828 0.02200335 0.02208817 0.02239619 0.0225435
+ 0.0234006  0.02355238 0.02376219 0.0238485  0.02448537 0.02454042
+ 0.02494814 0.02496153 0.02517879 0.02528741 0.02567132 0.02645848
+ 0.02696292 0.02711024 0.02732153 0.02735576 0.02833785 0.0284316
+ 0.02847475 0.02977379 0.03163382 0.03243139 0.03299238 0.03969442
+ 0.04135356]
+
+
+
+（21）
+balance model:
+model setting:
+raw_data = pd.read_csv(r"E:\CCFDF\plansmatching\data\raw data\final_data\Chanle_B\train_4_feature_select.csv",
+                       encoding="utf-8", low_memory=False)
+raw_data = data_balance(raw_data, [0], [0.5])
+para_list = ['online_time', '1_total_fee', '2_total_fee', '3_total_fee', '4_total_fee',
+             'fee_distance',
+             'month_traffic', 'many_over_bill', 'contract_type', 'contract_time', 'roaming_traffic', 'fee_pay_subtract',
+             'pay_num', 'last_month_traffic', 'local_trafffic_month', 'local_caller_time', 'service1_caller_time',
+             'service2_caller_time', 'age', 'fee_mean', 'fee_std', 'fee_fluctuate', 'fee_mean_2',
+             'service_caller_time_fluctuate', 'service_caller_time_mean',
+             'fee_mat_subtract_01', 'fee_mat_subtract_12', 'fee_mat_subtract_23', 'fee_mat_sum_01', 'fee_mat_sum_12',
+             'fee_mat_sum_23', 'fee_mat_sum_0112', 'pay_mean', 'online_time_per_fee', 'month_traffic_per_fee',
+             'contract_time_per_fee', 'last_month_traffic_per_fee', 'local_trafffic_month_per_fee',
+             'service_caller_time_mean_per_fee', 'pay_fee_subtract', 'pay_total', 'fee_min', 'traffic_current_month']
+label_train, label_test, data_train, data_test = train_test_split(label, raw_data[par_list], test_size=0.03)
+
+m_class = xgb.XGBClassifier(learning_rate=0.1, n_estimators=1500, max_depth=7, min_child_weight=6, gamma=0,
+                            subsample=0.8, n_jobs=-1, reg_alpha=0.05, reg_lambda=0.05,
+                            colsample_bytree=0.8, objective='multi:softmax', num_class=8, seed=27)
+submit_result = pd.read_csv(r"E:\CCFDF\plansmatching\data\raw data\final_data\result_test\XGBoost_finalprodata.csv",
+                            encoding="utf-8", low_memory=False)
+
+results:
+
+Accuracy : 0.90
+Test confusion matrix
+[[1795   72   10    0    3    5   11   69]
+ [  37 2069    3    0   14   30   91    9]
+ [  31    5  932    0    0    1    2    1]
+ [   0    0    0  585   12    3    1    0]
+ [   1   13    0   22  812   44   17    0]
+ [   3   30    1    1   88  793   42    5]
+ [  14   49    0    2   43   78 1427    7]
+ [  81   11    4    0    3    3    9  507]]
+F1
+[0.9141838553603259, 0.9191470457574411, 0.9698231009365245, 0.9661436829066886, 0.8619957537154989, 0.8260416666666668, 0.886335403726708, 0.8338815789473684]
+precision
+[0.9148827726809379, 0.9199644286349489, 0.9810526315789474, 0.9590163934426229, 0.8328205128205128, 0.8286311389759665, 0.891875, 0.8478260869565217]
+recall
+[0.9134860050890585, 0.9183311140701287, 0.9588477366255144, 0.9733777038269551, 0.8932893289328933, 0.8234683281412254, 0.8808641975308642, 0.8203883495145631]
+test F1_score
+0.804957093378131
+
+
+
+(22)
+0_7_class:
+raw_data = pd.read_csv(r"E:\CCFDF\plansmatching\data\raw data\final_data\Chanle_B\train_4_feature_select.csv",
+                       encoding="utf-8", low_memory=False)
+data_submit_raw = pd.read_csv(
+    r"E:\CCFDF\plansmatching\data\raw data\final_data\Chanle_B\test_4_feature_select.csv",
+    encoding="utf-8", low_memory=False)
+para_list = ['online_time', '1_total_fee', '2_total_fee', '3_total_fee', '4_total_fee',
+             'fee_distance',
+             'month_traffic', 'many_over_bill', 'contract_type', 'contract_time', 'roaming_traffic', 'fee_pay_subtract',
+             'pay_num', 'last_month_traffic', 'local_trafffic_month', 'local_caller_time', 'service1_caller_time',
+             'service2_caller_time', 'age', 'fee_mean', 'fee_std', 'fee_fluctuate', 'fee_mean_2',
+             'service_caller_time_fluctuate', 'service_caller_time_mean',
+             'fee_mat_subtract_01', 'fee_mat_subtract_12', 'fee_mat_subtract_23', 'fee_mat_sum_01', 'fee_mat_sum_12',
+             'fee_mat_sum_23', 'fee_mat_sum_0112', 'pay_mean', 'online_time_per_fee', 'month_traffic_per_fee',
+             'contract_time_per_fee', 'last_month_traffic_per_fee', 'local_trafffic_month_per_fee',
+             'service_caller_time_mean_per_fee', 'pay_fee_subtract', 'pay_total', 'fee_min', 'traffic_current_month',
+             'user_id']
+label_train, label_test, data_train, data_test = train_test_split(label, raw_data[par_list], test_size=0.03)
+
+m_class = xgb.XGBClassifier(learning_rate=0.1, n_estimators=1500, max_depth=7, min_child_weight=6, gamma=0,
+                            subsample=0.8, n_jobs=-1, reg_alpha=0.05, reg_lambda=0.05,
+                            colsample_bytree=0.8, objective='multi:softmax', num_class=8, seed=27)
+
+results:
+Accuracy : 0.91
+Test confusion matrix
+[[3804   76   11    0    2    8   16   46]
+ [  51 1997    2    0   13   36   80    6]
+ [  43    8  958    1    0    1    0    1]
+ [   0    0    0  633    9    1    1    1]
+ [   3   10    0   17  779   50   28    2]
+ [  11   22    0    3   72  823   49    4]
+ [  24   59    0    3   48   71 1365    6]
+ [ 113    6    2    0    0    5    8  512]]
+F1
+[0.9495756365451823, 0.9154251661700665, 0.9652392947103274, 0.9723502304147464, 0.8598233995584988, 0.831733198585144, 0.8741594620557157, 0.8366013071895425]
+precision
+[0.9394912324030625, 0.9168962350780533, 0.9845837615621789, 0.9634703196347032, 0.8439869989165764, 0.8271356783919598, 0.8823529411764706, 0.8858131487889274]
+recall
+[0.9598788796366389, 0.9139588100686499, 0.9466403162055336, 0.9813953488372092, 0.876265466816648, 0.8363821138211383, 0.8661167512690355, 0.7925696594427245]
+test F1_score
+0.8111046077620824
+Accuracy : 0.92
+Test confusion matrix
+[[3830   76   11    0    2    8   16   20]
+ [  51 1997    2    0   13   36   80    6]
+ [  43    8  958    1    0    1    0    1]
+ [   0    0    0  633    9    1    1    1]
+ [   3   10    0   17  779   50   28    2]
+ [  11   22    0    3   72  823   49    4]
+ [  24   59    0    3   48   71 1365    6]
+ [ 114    6    2    0    0    5    8  511]]
+F1
+[0.9528548326906331, 0.9154251661700665, 0.9652392947103274, 0.9723502304147464, 0.8598233995584988, 0.831733198585144, 0.8741594620557157, 0.8538011695906433]
+precision
+[0.9396467124631992, 0.9168962350780533, 0.9845837615621789, 0.9634703196347032, 0.8439869989165764, 0.8271356783919598, 0.8823529411764706, 0.9274047186932849]
+recall
+[0.9664395659853646, 0.9139588100686499, 0.9466403162055336, 0.9813953488372092, 0.876265466816648, 0.8363821138211383, 0.8661167512690355, 0.7910216718266254]
+test F1_score
+0.8157220897131006
+importance feature
+['many_over_bill' 'contract_time' 'service1_caller_time' 'pay_num'
+ 'last_month_traffic_per_fee' 'fee_mat_sum_0112' 'fee_mean' 'pay_total'
+ 'fee_mat_sum_12' 'contract_type' 'fee_mat_sum_01' 'fee_mat_sum_23'
+ 'service_caller_time_mean' 'local_trafffic_month' '2_total_fee'
+ 'pay_mean' 'fee_distance' 'local_trafffic_month_per_fee'
+ 'fee_mat_subtract_23' 'fee_std' 'fee_mean_2' 'age' 'month_traffic'
+ '4_total_fee' 'fee_mat_subtract_12' 'last_month_traffic'
+ 'fee_mat_subtract_01' 'service_caller_time_mean_per_fee' '3_total_fee'
+ 'service2_caller_time' 'pay_fee_subtract' 'fee_fluctuate'
+ 'fee_pay_subtract' 'month_traffic_per_fee' 'contract_time_per_fee'
+ 'traffic_current_month' 'local_caller_time' 'online_time'
+ 'service_caller_time_fluctuate' '1_total_fee' 'online_time_per_fee'
+ 'roaming_traffic' 'fee_min']
+feature score
+[0.00524645 0.01034241 0.01142121 0.01269073 0.01428359 0.0145354
+ 0.01472613 0.01521337 0.01576469 0.0164516  0.01759745 0.0184587
+ 0.01868667 0.02161461 0.02229259 0.02237603 0.02240732 0.02321194
+ 0.02375879 0.02385862 0.02418345 0.02451872 0.02498659 0.02503725
+ 0.02510281 0.02545744 0.02572565 0.02612648 0.02659137 0.02689534
+ 0.02720676 0.02730063 0.02749434 0.02755841 0.0276046  0.02799648
+ 0.02891882 0.02935988 0.03011086 0.03252324 0.03352902 0.03889617
+ 0.04193736]
+
+
+
+
+(23)
+up sampling:
+raw_data = pd.read_csv(r"E:\CCFDF\plansmatching\data\raw data\final_data\Chanle_B\train_4_feature_select.csv",
+                       encoding="utf-8", low_memory=False)
+data_submit_raw = pd.read_csv(
+    r"E:\CCFDF\plansmatching\data\raw data\final_data\Chanle_B\test_4_feature_select.csv",
+    encoding="utf-8", low_memory=False)
+model_0_8 = joblib.load(r'E:\CCFDF\plansmatching\data\raw data\final_data\Chanle_B\xgb_0_8_up.model')
+submit_result = pd.read_csv(r"E:\CCFDF\plansmatching\data\raw data\final_data\result_test\XGBoost_finalprodata.csv",
+                            encoding="utf-8", low_memory=False)
+para_list = ['online_time', '1_total_fee', '2_total_fee', '3_total_fee', '4_total_fee',
+             'fee_distance',
+             'month_traffic', 'many_over_bill', 'contract_type', 'contract_time', 'roaming_traffic', 'fee_pay_subtract',
+             'pay_num', 'last_month_traffic', 'local_trafffic_month', 'local_caller_time', 'service1_caller_time',
+             'service2_caller_time', 'age', 'fee_mean', 'fee_std', 'fee_fluctuate', 'fee_mean_2',
+             'service_caller_time_fluctuate', 'service_caller_time_mean',
+             'fee_mat_subtract_01', 'fee_mat_subtract_12', 'fee_mat_subtract_23', 'fee_mat_sum_01', 'fee_mat_sum_12',
+             'fee_mat_sum_23', 'fee_mat_sum_0112', 'pay_mean', 'online_time_per_fee', 'month_traffic_per_fee',
+             'contract_time_per_fee', 'last_month_traffic_per_fee', 'local_trafffic_month_per_fee',
+             'service_caller_time_mean_per_fee', 'pay_fee_subtract', 'pay_total', 'fee_min', 'traffic_current_month',
+             'user_id']
+m_class = xgb.XGBClassifier(learning_rate=0.1, n_estimators=1500, max_depth=7, min_child_weight=6, gamma=0,
+                            subsample=0.8, n_jobs=-1, reg_alpha=0.05, reg_lambda=0.05,
+                            colsample_bytree=0.8, objective='multi:softmax', num_class=8, seed=27)
+
+results:
+Accuracy : 0.92
+Test confusion matrix
+[[3861   77    9    1    3    8   25   49]
+ [  57 1989    3    1   15   33   79    6]
+ [  35    4  978    0    0    0    1    1]
+ [   0    3    0  584   20    0    3    1]
+ [   4    8    0   11  783   28   19    0]
+ [  14   18    0    6   65  821   42    0]
+ [  22   57    0    2   40   71 1379    8]
+ [ 123    8    1    0    3    3    6  512]]
+F1
+[0.9476009326297706, 0.9151138716356109, 0.9731343283582089, 0.9605263157894737, 0.8787878787878788, 0.8507772020725388, 0.8803064155761251, 0.8304947283049473]
+precision
+[0.9380466472303207, 0.9191312384473198, 0.9868819374369324, 0.9652892561983472, 0.8428417653390743, 0.8516597510373444, 0.8873873873873874, 0.8873483535528596]
+recall
+[0.9573518472601041, 0.9111314704535044, 0.9597644749754661, 0.955810147299509, 0.917936694021102, 0.849896480331263, 0.8733375554148195, 0.7804878048780488]
+test F1_score
+Correction by the two class classifier
+Accuracy : 0.92
+Test confusion matrix
+[[3900   77    9    1    3    8   25   10]
+ [  57 1989    3    1   15   33   79    6]
+ [  35    4  978    0    0    0    1    1]
+ [   0    3    0  584   20    0    3    1]
+ [   4    8    0   11  783   28   19    0]
+ [  14   18    0    6   65  821   42    0]
+ [  22   57    0    2   40   71 1379    8]
+ [ 123    8    1    0    3    3    6  512]]
+F1
+[0.9526135808500245, 0.9151138716356109, 0.9731343283582089, 0.9605263157894737, 0.8787878787878788, 0.8507772020725388, 0.8803064155761251, 0.8576214405360134]
+precision
+[0.9386281588447654, 0.9191312384473198, 0.9868819374369324, 0.9652892561983472, 0.8428417653390743, 0.8516597510373444, 0.8873873873873874, 0.9516728624535316]
+recall
+[0.9670220679394992, 0.9111314704535044, 0.9597644749754661, 0.955810147299509, 0.917936694021102, 0.849896480331263, 0.8733375554148195, 0.7804878048780488]
+test F1_score
+0.825572366886175
+importance feature
+['many_over_bill' 'contract_time' 'service1_caller_time' 'pay_num'
+ 'last_month_traffic_per_fee' 'fee_mat_sum_0112' 'fee_mean' 'pay_total'
+ 'fee_mat_sum_12' 'contract_type' 'fee_mat_sum_01' 'fee_mat_sum_23'
+ 'service_caller_time_mean' 'local_trafffic_month' 'pay_mean'
+ '2_total_fee' 'fee_distance' 'local_trafffic_month_per_fee' 'fee_std'
+ 'fee_mat_subtract_23' 'fee_mean_2' 'fee_mat_subtract_12' 'age'
+ 'month_traffic' 'last_month_traffic' '4_total_fee' 'fee_mat_subtract_01'
+ 'service_caller_time_mean_per_fee' '3_total_fee' 'pay_fee_subtract'
+ 'service2_caller_time' 'fee_fluctuate' 'month_traffic_per_fee'
+ 'fee_pay_subtract' 'contract_time_per_fee' 'traffic_current_month'
+ 'local_caller_time' 'online_time' 'service_caller_time_fluctuate'
+ '1_total_fee' 'online_time_per_fee' 'roaming_traffic' 'fee_min']
+feature score
+[0.0053914  0.01031735 0.01141234 0.0127669  0.01427661 0.01435419
+ 0.01466598 0.01530149 0.01586241 0.01640841 0.01786442 0.0187774
+ 0.01920854 0.02179981 0.02222348 0.0222936  0.02243532 0.02281275
+ 0.02363175 0.0238406  0.02424339 0.0248431  0.02495051 0.02500272
+ 0.02528169 0.02549502 0.02559348 0.02576653 0.02627971 0.02667057
+ 0.0268287  0.02712855 0.02731055 0.02759549 0.02773721 0.02800573
+ 0.02847118 0.02929317 0.03018378 0.03289589 0.03350604 0.03936885
+ 0.04190343]
+
+
+（24）
+up sampling real:
+raw_data = pd.read_csv(r"E:\CCFDF\plansmatching\data\raw data\final_data\Chanle_B\train_4_feature_select.csv",
+                       encoding="utf-8", low_memory=False)
+data_submit_raw = pd.read_csv(
+    r"E:\CCFDF\plansmatching\data\raw data\final_data\Chanle_B\test_4_feature_select.csv",
+    encoding="utf-8", low_memory=False)
+model_0_8 = joblib.load(r'E:\CCFDF\plansmatching\data\raw data\final_data\Chanle_B\xgb_0_8_up_real.model')
+submit_result = pd.read_csv(r"E:\CCFDF\plansmatching\data\raw data\final_data\result_test\XGBoost_finalprodata.csv",
+                            encoding="utf-8", low_memory=False)
+para_list = ['online_time', '1_total_fee', '2_total_fee', '3_total_fee', '4_total_fee',
+             'fee_distance',
+             'month_traffic', 'many_over_bill', 'contract_type', 'contract_time', 'roaming_traffic', 'fee_pay_subtract',
+             'pay_num', 'last_month_traffic', 'local_trafffic_month', 'local_caller_time', 'service1_caller_time',
+             'service2_caller_time', 'age', 'fee_mean', 'fee_std', 'fee_fluctuate', 'fee_mean_2',
+             'service_caller_time_fluctuate', 'service_caller_time_mean',
+             'fee_mat_subtract_01', 'fee_mat_subtract_12', 'fee_mat_subtract_23', 'fee_mat_sum_01', 'fee_mat_sum_12',
+             'fee_mat_sum_23', 'fee_mat_sum_0112', 'pay_mean', 'online_time_per_fee', 'month_traffic_per_fee',
+             'contract_time_per_fee', 'last_month_traffic_per_fee', 'local_trafffic_month_per_fee',
+             'service_caller_time_mean_per_fee', 'pay_fee_subtract', 'pay_total', 'fee_min', 'traffic_current_month',
+             'user_id']
+m_class = xgb.XGBClassifier(learning_rate=0.1, n_estimators=1500, max_depth=7, min_child_weight=6, gamma=0,
+                            subsample=0.8, n_jobs=-1, reg_alpha=0.05, reg_lambda=0.05,
+                            colsample_bytree=0.8, objective='multi:softmax', num_class=8, seed=27)
+
+results:
+Accuracy : 0.91
+Test confusion matrix
+[[3860   75    7    0    4   10   19   79]
+ [  55 1991    3    1   20   39   87    6]
+ [  47    9  930    0    0    1    0    4]
+ [   0    2    0  611   18    3    2    0]
+ [   6    9    0   19  741   44   15    0]
+ [   8   25    0    7   66  810   48    2]
+ [  22   63    0    6   41   82 1364   10]
+ [ 131    9    1    0    4    3    6  475]]
+F1
+[0.9434192838812172, 0.9080957810718359, 0.9627329192546584, 0.9546874999999999, 0.857638888888889, 0.8273748723186926, 0.8718440396292745, 0.7883817427385892]
+precision
+[0.9348510535238557, 0.9120476408612002, 0.9883103081827843, 0.9487577639751553, 0.8288590604026845, 0.8165322580645161, 0.8851395197923426, 0.8246527777777778]
+recall
+[0.9521460286137149, 0.9041780199818347, 0.9384460141271443, 0.960691823899371, 0.8884892086330936, 0.8385093167701864, 0.8589420654911839, 0.7551669316375199]
+test F1_score
+
+Correction by the two class classifier
+Accuracy : 0.92
+Test confusion matrix
+[[3921   75    7    0    4   10   19   18]
+ [  52 1991    3    1   20   39   87    9]
+ [  45    9  930    0    0    1    0    6]
+ [   0    2    0  611   18    3    2    0]
+ [   6    9    0   19  741   44   15    0]
+ [   8   25    0    7   66  810   48    2]
+ [  19   63    0    6   41   82 1364   13]
+ [   0    9    1    0    4    3    6  606]]
+F1
+[0.9675508945095619, 0.9080957810718359, 0.9627329192546584, 0.9546874999999999, 0.857638888888889, 0.8273748723186926, 0.8718440396292745, 0.9446609508963367]
+precision
+[0.9679091582325352, 0.9120476408612002, 0.9883103081827843, 0.9487577639751553, 0.8288590604026845, 0.8165322580645161, 0.8851395197923426, 0.926605504587156]
+recall
+[0.9671928959052787, 0.9041780199818347, 0.9384460141271443, 0.960691823899371, 0.8884892086330936, 0.8385093167701864, 0.8589420654911839, 0.9634340222575517]
+test F1_score
+0.8314216042651313
+importance feature
+['many_over_bill' 'contract_time' 'service1_caller_time' 'pay_num'
+ 'last_month_traffic_per_fee' 'fee_mat_sum_0112' 'fee_mean' 'pay_total'
+ 'fee_mat_sum_12' 'contract_type' 'fee_mat_sum_01' 'fee_mat_sum_23'
+ 'service_caller_time_mean' 'local_trafffic_month' '2_total_fee'
+ 'fee_distance' 'pay_mean' 'local_trafffic_month_per_fee' 'fee_std'
+ 'fee_mat_subtract_23' 'fee_mean_2' 'fee_mat_subtract_12' 'month_traffic'
+ 'age' 'last_month_traffic' '4_total_fee' 'fee_mat_subtract_01'
+ 'service_caller_time_mean_per_fee' 'service2_caller_time' '3_total_fee'
+ 'fee_fluctuate' 'pay_fee_subtract' 'month_traffic_per_fee'
+ 'fee_pay_subtract' 'contract_time_per_fee' 'traffic_current_month'
+ 'local_caller_time' 'online_time' 'service_caller_time_fluctuate'
+ '1_total_fee' 'online_time_per_fee' 'roaming_traffic' 'fee_min']
+feature score
+[0.00517743 0.01023709 0.01140883 0.01262232 0.01437248 0.01454242
+ 0.01467361 0.0154175  0.01591393 0.01647446 0.01761489 0.01828574
+ 0.01856302 0.02178904 0.02197688 0.02229143 0.02240174 0.02306364
+ 0.02364952 0.02383437 0.02464386 0.02477504 0.02495394 0.02501208
+ 0.02531321 0.02537135 0.02554428 0.0263165  0.02650284 0.02684572
+ 0.0269456  0.02715729 0.02717369 0.02763582 0.02791311 0.02801895
+ 0.02840655 0.02932784 0.03015373 0.03255088 0.03392686 0.03911621
+ 0.04208433]
+
+]th[gj[]r
+
+
+
+
+

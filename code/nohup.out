@@ -1,0 +1,32 @@
+Traceback (most recent call last):
+  File "GBDT.py", line 2, in <module>
+    import matplotlib.pyplot as plot
+ImportError: No module named 'matplotlib'
+Traceback (most recent call last):
+  File "GBDT.py", line 2, in <module>
+    import matplotlib.pyplot as plot
+ImportError: No module named 'matplotlib'
+Traceback (most recent call last):
+  File "remote_data_propocess.py", line 4, in <module>
+    import matplotlib.pyplot as plt
+ImportError: No module named 'matplotlib'
+Traceback (most recent call last):
+  File "remote_process.py", line 27, in <module>
+    raw_data = pd.read_csv(r"/data/projects/CCFDF_18/data/class_2_pro", encoding="utf-8", low_memory=False)
+  File "/usr/local/lib/python3.5/dist-packages/pandas/io/parsers.py", line 709, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "/usr/local/lib/python3.5/dist-packages/pandas/io/parsers.py", line 449, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/usr/local/lib/python3.5/dist-packages/pandas/io/parsers.py", line 818, in __init__
+    self._make_engine(self.engine)
+  File "/usr/local/lib/python3.5/dist-packages/pandas/io/parsers.py", line 1049, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/usr/local/lib/python3.5/dist-packages/pandas/io/parsers.py", line 1695, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 402, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 718, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: File b'/data/projects/CCFDF_18/data/class_2_pro' does not exist
+Traceback (most recent call last):
+  File "remote_data_propocess.py", line 4, in <module>
+    import matplotlib.pyplot as plt
+ImportError: No module named 'matplotlib'

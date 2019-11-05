@@ -1,0 +1,445 @@
+£¨1£©
+parameter setting£º
+iTrees = 2000
+depth = 36
+maxFeat = 0.4
+balance_data = raw_data
+para_list = ['is_mix_service', 'online_time', '1_total_fee', '2_total_fee', '3_total_fee', '4_total_fee',
+                 '1_total_fee_norm', '2_total_fee_norm', '3_total_fee_norm', '4_total_fee_norm',
+                 'month_traffic', 'many_over_bill', 'contract_type', 'contract_time',
+                 'is_promise_low_consume', 'net_service', 'pay_times', 'pay_num', 'last_month_traffic',
+                 'local_trafffic_month', 'local_caller_time', 'service1_caller_time', 'service2_caller_time', 'gender',
+                 'age', 'complaint_level', 'former_complaint_num', 'former_complaint_fee',
+                 'fee_mean', 'fee_std', 'fee_fluctuate', 'fee_mean_2',
+                 'service_caller_time_fluctuate', 'online_time_norm', 'fee_mean_norm', 'fee_std_norm',
+                 'fee_fluctuate_norm', 'month_traffic_norm', 'contract_time_norm', 'pay_num_norm',
+                 'last_month_traffic_norm', 'local_trafffic_month_norm', 'local_caller_time_norm',
+                 'service1_caller_time_norm', 'service2_caller_time_norm', 'age_norm', 'former_complaint_num_norm',
+                 'former_complaint_fee_norm', 'fee_mean_2_norm', 'service_caller_time_fluctuate_norm', 'user_id'
+                 ]
+
+
+results:
+train correct
+0.9995041655694813
+F1 Score test
+F1
+[0.9330908821019037, 0.894183126315075, 0.9588317539226349, 0.9497523000707714, 0.8425298483381737, 0.8012105766167569, 0.8551619337069049, 0.7723720695739853]
+precision
+[0.9204861619563626, 0.8980231765507839, 0.9778200253485425, 0.941534144059869, 0.81112146629388, 0.8073836276083467, 0.8608030592734226, 0.8450082735797021]
+recall
+[0.9460456016254045, 0.8903757772370912, 0.9405669003352637, 0.9581151832460733, 0.8764686136287345, 0.7951312045526399, 0.8495942630685035, 0.7112349117920148]
+0.767186027210464
+test correct
+0.892950786607503
+Missclassification Error
+[0.10704921339249696]
+
+F1
+[0.9330908821019037, 0.894183126315075, 0.9588317539226349, 0.9497523000707714, 0.8425298483381737, 0.8012105766167569, 0.8551619337069049, 0.7723720695739853]
+precision
+[0.9204861619563626, 0.8980231765507839, 0.9778200253485425, 0.941534144059869, 0.81112146629388, 0.8073836276083467, 0.8608030592734226, 0.8450082735797021]
+recall
+[0.9460456016254045, 0.8903757772370912, 0.9405669003352637, 0.9581151832460733, 0.8764686136287345, 0.7951312045526399, 0.8495942630685035, 0.7112349117920148]
+[[12572   284    44     2    34    56    84   213]
+ [  275  6587     6     8    69   120   305    28]
+ [  158    18  3086     1     2     4     2    10]
+ [    3     5     0  2013    64    13     3     0]
+ [   19    43     4    65  2611   148    88     1]
+ [   51    95     4    27   257  2515   208     6]
+ [   97   251     2    20   162   242  4502    23]
+ [  483    52    10     2    20    17    38  1532]]
+0.767186027210464
+
+(2)
+parameter setting:
+iTrees = 470
+depth = 36
+maxFeat = 0.4
+para_list = ['is_mix_service', 'online_time', '1_total_fee', '2_total_fee', '3_total_fee', '4_total_fee',
+                 '1_total_fee_norm', '2_total_fee_norm', '3_total_fee_norm', '4_total_fee_norm',
+                 'month_traffic', 'many_over_bill', 'contract_type', 'contract_time',
+                 'is_promise_low_consume', 'net_service', 'pay_times', 'pay_num', 'last_month_traffic',
+                 'local_trafffic_month', 'local_caller_time', 'service1_caller_time', 'service2_caller_time', 'gender',
+                 'age', 'complaint_level', 'former_complaint_num', 'former_complaint_fee',
+                 'fee_mean', 'fee_std', 'fee_fluctuate', 'fee_mean_2',
+                 'service_caller_time_fluctuate', 'online_time_norm', 'fee_mean_norm', 'fee_std_norm',
+                 'fee_fluctuate_norm', 'month_traffic_norm', 'contract_time_norm', 'pay_num_norm',
+                 'last_month_traffic_norm', 'local_trafffic_month_norm', 'local_caller_time_norm',
+                 'service1_caller_time_norm', 'service2_caller_time_norm', 'age_norm', 'former_complaint_num_norm',
+                 'former_complaint_fee_norm', 'fee_mean_2_norm', 'service_caller_time_fluctuate_norm', 'user_id'
+                 ]
+
+results:
+train correct
+0.9994901589471502
+F1 Score test
+F1
+[0.9327125595831948, 0.8945198999932429, 0.9520579620780021, 0.9428035630567276, 0.8301755605770903, 0.8045760852530952, 0.8635376333931438, 0.7899749373433583]
+precision
+[0.9166908773968623, 0.903864536392189, 0.9753632343651295, 0.9388422035480859, 0.7949400798934754, 0.8115712930761935, 0.8685410334346505, 0.8593238822246456]
+recall
+[0.949304249717939, 0.885366506153023, 0.9298404095152063, 0.946798493408663, 0.868679519825391, 0.7977004350528278, 0.8585915492957746, 0.7309833024118738]
+0.7678925329722452
+test correct
+0.8935558693021379
+Missclassification Error
+[0.10644413069786207]
+F1
+[0.9327125595831948, 0.8945198999932429, 0.9520579620780021, 0.9428035630567276, 0.8301755605770903, 0.8045760852530952, 0.8635376333931438, 0.7899749373433583]
+precision
+[0.9166908773968623, 0.903864536392189, 0.9753632343651295, 0.9388422035480859, 0.7949400798934754, 0.8115712930761935, 0.8685410334346505, 0.8593238822246456]
+recall
+[0.949304249717939, 0.885366506153023, 0.9298404095152063, 0.946798493408663, 0.868679519825391, 0.7977004350528278, 0.8585915492957746, 0.7309833024118738]
+[[12621   277    49     5    28    52    88   175]
+ [  331  6619     8    13    64   120   297    24]
+ [  178    26  3088     1     0     5     5    18]
+ [    1     8     0  2011    75    21     6     2]
+ [   19    44     1    66  2388   158    70     3]
+ [   45    87     2    29   282  2567   194    12]
+ [  103   223     2    15   156   230  4572    24]
+ [  470    39    16     2    11    10    32  1576]]
+0.7678925329722452
+
+(3)
+parameter setting:
+iTrees = 470
+depth = 36
+maxFeat = 0.4
+para_list = ['is_mix_service', 'online_time', '1_total_fee', '2_total_fee', '3_total_fee', '4_total_fee',
+                 'month_traffic', 'many_over_bill', 'contract_type', 'contract_time',
+                 'is_promise_low_consume', 'net_service', 'pay_times', 'pay_num', 'last_month_traffic',
+                 'local_trafffic_month', 'local_caller_time', 'service1_caller_time', 'service2_caller_time', 'gender',
+                 'age', 'complaint_level', 'former_complaint_num', 'former_complaint_fee',
+                 'fee_mean', 'fee_std', 'fee_fluctuate', 'fee_mean_2',
+                 'service_caller_time_fluctuate',  'user_id'
+                 ]
+
+results:
+train correct
+0.9997646887448386
+F1 Score test
+F1
+[0.9334512491709044, 0.8954959858484146, 0.9567749846719805, 0.9473161033797216, 0.829975825946817, 0.8044881647709806, 0.848159509202454, 0.7813733228097869]
+precision
+[0.9184250598216228, 0.903611149251682, 0.9789836888331243, 0.9315738025415444, 0.7942628007402838, 0.8109699411217849, 0.8593628593628594, 0.8539390454284072]
+recall
+[0.948977298269274, 0.8875252865812542, 0.9355515587529976, 0.9635995955510617, 0.8690516368545393, 0.7981091796279354, 0.8372445117335352, 0.7201745877788555]
+0.7649765754933635
+test correct
+0.8918666801129488
+Missclassification Error
+[0.10813331988705122]
+F1
+[0.9334512491709044, 0.8954959858484146, 0.9567749846719805, 0.9473161033797216, 0.829975825946817, 0.8044881647709806, 0.848159509202454, 0.7813733228097869]
+precision
+[0.9184250598216228, 0.903611149251682, 0.9789836888331243, 0.9315738025415444, 0.7942628007402838, 0.8109699411217849, 0.8593628593628594, 0.8539390454284072]
+recall
+[0.948977298269274, 0.8875252865812542, 0.9355515587529976, 0.9635995955510617, 0.8690516368545393, 0.7981091796279354, 0.8372445117335352, 0.7201745877788555]
+[[12666   268    43     2    32    55    96   185]
+ [  317  6581     7    10    76   113   293    18]
+ [  168    23  3121     0     2     1     3    18]
+ [    5     4     1  1906    45    12     4     1]
+ [   25    29     3    83  2575   164    82     2]
+ [   49    73     1    23   299  2617   210     7]
+ [  116   252     1    20   199   249  4424    23]
+ [  445    53    11     2    14    16    36  1485]]
+0.7649765754933635
+
+
+
+(4)
+parameter setting:
+iTrees = 470
+depth = 36
+maxFeat = 0.4
+para_list = ['is_mix_service', 'online_time', '1_total_fee', '2_total_fee', '3_total_fee', '4_total_fee',
+                 'month_traffic', 'many_over_bill', 'contract_type', 'contract_time',
+                 'is_promise_low_consume', 'net_service', 'pay_times', 'pay_num', 'last_month_traffic',
+                 'local_trafffic_month', 'local_caller_time', 'service1_caller_time', 'service2_caller_time', 'gender',
+                 'age', 'complaint_level', 'former_complaint_num', 'former_complaint_fee',
+                 'fee_mean', 'fee_std', 'fee_fluctuate', 'fee_mean_2',
+                 'service_caller_time_fluctuate', 'month_traffic_precentage', 'contract_time_precentage',
+                 'pay_times_precentage', 'pay_num_precentage', 'last_month_traffic_precentage',
+                 'local_trafffic_month_precentage', 'local_caller_time_precentage', 'service1_caller_time_precentage',
+                 'service2_caller_time_precentage', 'user_id'
+                 ]
+
+results:
+train correct
+0.9997086622555144
+F1 Score test
+F1
+[0.9374791782343143, 0.8961456835763675, 0.9591584158415842, 0.9505386875612145, 0.8409730266423961, 0.8101028999064546, 0.8604093675087591, 0.7891050583657588]
+precision
+[0.9274884640738299, 0.8959616700889802, 0.9794628751974723, 0.9413191076624636, 0.8074356530028599, 0.8245001586797842, 0.8661592723222573, 0.8478260869565217]
+recall
+[0.947687471935339, 0.8963297726650232, 0.9396786905122765, 0.9599406528189911, 0.8774171270718232, 0.7961998161201348, 0.854735299505404, 0.7379912663755459]
+0.7752609490399395
+test correct
+0.8969090359015732
+Missclassification Error
+[0.10309096409842677]
+F1
+[0.9374791782343143, 0.8961456835763675, 0.9591584158415842, 0.9505386875612145, 0.8409730266423961, 0.8101028999064546, 0.8604093675087591, 0.7891050583657588]
+precision
+[0.9274884640738299, 0.8959616700889802, 0.9794628751974723, 0.9413191076624636, 0.8074356530028599, 0.8245001586797842, 0.8661592723222573, 0.8478260869565217]
+recall
+[0.947687471935339, 0.8963297726650232, 0.9396786905122765, 0.9599406528189911, 0.8774171270718232, 0.7961998161201348, 0.854735299505404, 0.7379912663755459]
+[[12663   285    41     1    33    48   106   185]
+ [  264  6545     9    10    72    97   276    29]
+ [  153    25  3100     0     1     2     4    14]
+ [    2     7     0  1941    51    16     4     1]
+ [   16    43     0    69  2541   139    80     8]
+ [   38   103     3    27   269  2598   210    15]
+ [   96   248     3    13   174   238  4666    21]
+ [  421    49     9     1     6    13    41  1521]]
+0.7752609490399395
+
+
+
+(5)
+parameter setting:
+iTrees = 470
+depth = 36
+maxFeat = 0.4
+para_list = ['is_mix_service', 'online_time', '1_total_fee', '2_total_fee', '3_total_fee', '4_total_fee',
+                 '1_total_fee_norm', '2_total_fee_norm', '3_total_fee_norm', '4_total_fee_norm',
+                 'month_traffic', 'many_over_bill', 'contract_type', 'contract_time',
+                 'is_promise_low_consume', 'net_service', 'pay_times', 'pay_num', 'last_month_traffic',
+                 'local_trafffic_month', 'local_caller_time', 'service1_caller_time', 'service2_caller_time', 'gender',
+                 'age', 'complaint_level', 'former_complaint_num', 'former_complaint_fee',
+                 'fee_mean', 'fee_std', 'fee_fluctuate', 'fee_mean_2',
+                 'service_caller_time_fluctuate', 'online_time_norm', 'fee_mean_norm', 'fee_std_norm',
+                 'fee_fluctuate_norm', 'month_traffic_norm', 'contract_time_norm', 'pay_num_norm',
+                 'last_month_traffic_norm', 'local_trafffic_month_norm', 'local_caller_time_norm',
+                 'service1_caller_time_norm', 'service2_caller_time_norm', 'age_norm', 'former_complaint_num_norm',
+                 'former_complaint_fee_norm', 'fee_mean_2_norm', 'service_caller_time_fluctuate_norm',
+                 'month_traffic_precentage', 'contract_time_precentage',
+                 'pay_times_precentage', 'pay_num_precentage', 'last_month_traffic_precentage',
+                 'local_trafffic_month_precentage', 'local_caller_time_precentage', 'service1_caller_time_precentage',
+                 'service2_caller_time_precentage', 'user_id'
+                 ]
+
+results:
+train correct
+0.999459344378022
+F1 Score test
+F1
+[0.9358724078234926, 0.8921535441066956, 0.9540481400437636, 0.9420666824308348, 0.8305374871619308, 0.808536400787044, 0.8542106272779589, 0.783410138248848]
+precision
+[0.9240616816991563, 0.8991539301310044, 0.9729040484539369, 0.9356505401596994, 0.79177545691906, 0.8208358942839582, 0.8560169165705498, 0.8490566037735849]
+recall
+[0.9479889560480561, 0.8852613193604729, 0.9359092302974548, 0.9485714285714286, 0.8732901367890569, 0.7966000596480763, 0.8524119448698315, 0.7271863117870723]
+0.7658077607541827
+test correct
+0.8929255748285599
+Missclassification Error
+[0.10707442517144006]
+F1
+[0.9358724078234926, 0.8921535441066956, 0.9540481400437636, 0.9420666824308348, 0.8305374871619308, 0.808536400787044, 0.8542106272779589, 0.783410138248848]
+precision
+[0.9240616816991563, 0.8991539301310044, 0.9729040484539369, 0.9356505401596994, 0.79177545691906, 0.8208358942839582, 0.8560169165705498, 0.8490566037735849]
+recall
+[0.9479889560480561, 0.8852613193604729, 0.9359092302974548, 0.9485714285714286, 0.8732901367890569, 0.7966000596480763, 0.8524119448698315, 0.7271863117870723]
+[[12704   302    56     2    23    33    91   190]
+ [  278  6589     8    12    85   130   317    24]
+ [  150    33  3052     0     4     1     6    15]
+ [    4    10     0  1992    63    19    12     0]
+ [   23    40     1    78  2426   141    65     4]
+ [   56    92     6    24   277  2671   219     8]
+ [   96   211     2    18   169   244  4453    31]
+ [  437    51    12     3    17    15    39  1530]]
+0.7658077607541827
+
+
+(6):
+model setting:
+test_size=0.03
+ # n_jobs = 4
+ iTrees = 470
+# iTrees = 2000
+depth = None
+maxFeat = 0.36
+# classweight = "balanced_subsample"
+classweight = None
+para_list = ['is_mix_service', 'online_time', '1_total_fee', '2_total_fee', '3_total_fee', '4_total_fee',
+                 '1_total_fee_norm', '2_total_fee_norm', '3_total_fee_norm', '4_total_fee_norm',
+                 'month_traffic', 'many_over_bill', 'contract_type', 'contract_time',
+                 'is_promise_low_consume', 'net_service', 'pay_times', 'pay_num', 'last_month_traffic',
+                 'local_trafffic_month', 'local_caller_time', 'service1_caller_time', 'service2_caller_time', 'gender',
+                 'age', 'complaint_level', 'former_complaint_num', 'former_complaint_fee',
+                 'fee_mean', 'fee_std', 'fee_fluctuate', 'fee_mean_2',
+                 'service_caller_time_fluctuate', 'online_time_norm', 'fee_mean_norm', 'fee_std_norm',
+                 'fee_fluctuate_norm', 'month_traffic_norm', 'contract_time_norm', 'pay_num_norm',
+                 'last_month_traffic_norm', 'local_trafffic_month_norm', 'local_caller_time_norm',
+                 'service1_caller_time_norm', 'service2_caller_time_norm', 'age_norm', 'former_complaint_num_norm',
+                 'former_complaint_fee_norm', 'fee_mean_2_norm', 'service_caller_time_fluctuate_norm',
+                 'month_traffic_precentage', 'contract_time_precentage',
+                 'pay_times_precentage', 'pay_num_precentage', 'last_month_traffic_precentage',
+                 'local_trafffic_month_precentage', 'local_caller_time_precentage', 'service1_caller_time_precentage',
+                 'service2_caller_time_precentage',
+                 'user_id'
+                 ]
+
+results:
+obb_score
+0.8958849918645936
+train correct
+1.0
+F1 Score test
+F1
+[0.9364075864633694, 0.8886848749139317, 0.9588607594936709, 0.9485049833887043, 0.8450413223140496, 0.7963617988883275, 0.8461784457946914, 0.8022690437601296]
+precision
+[0.927098674521355, 0.9004651162790698, 0.9721925133689839, 0.943801652892562, 0.8051181102362205, 0.8032619775739042, 0.84375, 0.8669001751313485]
+recall
+[0.9459053343350864, 0.877208880833711, 0.9458896982310093, 0.9532554257095158, 0.8891304347826087, 0.7895791583166333, 0.8486209108402822, 0.746606334841629]
+0.77051282958537
+test correct
+0.8921848739495798
+Missclassification Error
+[0.1078151260504202]
+importance attributes
+['former_complaint_fee_norm' 'net_service' 'complaint_level'
+ 'former_complaint_num_norm' 'former_complaint_num' 'former_complaint_fee'
+ 'local_trafffic_month_precentage' 'month_traffic_precentage'
+ 'is_mix_service' 'is_promise_low_consume' 'last_month_traffic_precentage'
+ 'pay_times' 'pay_times_precentage' 'local_caller_time_precentage'
+ 'gender' 'pay_num_precentage' 'pay_num_norm' 'pay_num'
+ 'local_caller_time' 'local_caller_time_norm' 'fee_mean_2_norm'
+ 'fee_mean_2' 'fee_fluctuate' 'fee_fluctuate_norm'
+ 'local_trafffic_month_norm' 'local_trafffic_month' 'age' 'age_norm'
+ 'fee_std' 'fee_std_norm' 'service1_caller_time_precentage'
+ 'service1_caller_time_norm' 'service1_caller_time' 'online_time'
+ 'online_time_norm' 'contract_time_precentage'
+ 'service2_caller_time_precentage' 'month_traffic' 'month_traffic_norm'
+ 'fee_mean_norm' 'many_over_bill' 'service_caller_time_fluctuate'
+ 'contract_time_norm' 'service_caller_time_fluctuate_norm' 'fee_mean'
+ 'contract_time' '4_total_fee' '2_total_fee_norm' '2_total_fee'
+ '4_total_fee_norm' 'service2_caller_time' 'service2_caller_time_norm'
+ 'contract_type' 'last_month_traffic' 'last_month_traffic_norm'
+ '3_total_fee_norm' '3_total_fee' '1_total_fee_norm' '1_total_fee']
+importance score
+[0.         0.00926836 0.01172623 0.0118657  0.01187071 0.01204033
+ 0.01494206 0.0170888  0.01876223 0.01996572 0.02018948 0.0369405
+ 0.03695833 0.04195224 0.04259223 0.0601331  0.06424021 0.06657491
+ 0.06898645 0.06948121 0.07737519 0.07745038 0.07982518 0.08058289
+ 0.09795959 0.09912079 0.10040401 0.10085784 0.11959007 0.12002026
+ 0.12714695 0.13311746 0.1359017  0.1429123  0.14365604 0.15892327
+ 0.16845197 0.17684773 0.18241581 0.20741217 0.21236481 0.21590495
+ 0.21749702 0.22290026 0.22393598 0.23224862 0.24410268 0.24787016
+ 0.25080163 0.25305527 0.29549942 0.30707827 0.36080176 0.60640712
+ 0.61247995 0.72844612 0.7623802  0.93898627 1.        ]
+F1
+[0.9364075864633694, 0.8886848749139317, 0.9588607594936709, 0.9485049833887043, 0.8450413223140496, 0.7963617988883275, 0.8461784457946914, 0.8022690437601296]
+precision
+[0.927098674521355, 0.9004651162790698, 0.9721925133689839, 0.943801652892562, 0.8051181102362205, 0.8032619775739042, 0.84375, 0.8669001751313485]
+recall
+[0.9459053343350864, 0.877208880833711, 0.9458896982310093, 0.9532554257095158, 0.8891304347826087, 0.7895791583166333, 0.8486209108402822, 0.746606334841629]
+[[3777   90   17    1   10   24   25   49]
+ [  89 1936    2    6   29   39  100    6]
+ [  39    7  909    0    0    0    2    4]
+ [   2    1    0  571   19    4    2    0]
+ [   3   13    0   15  818   44   27    0]
+ [   8   30    2    5   87  788   72    6]
+ [  27   62    0    6   52   78 1323   11]
+ [ 129   11    5    1    1    4   17  495]]
+0.77051282958537
+
+
+(7)
+model setting:
+test_size=0.03
+ # n_jobs = 4
+ iTrees = 470
+# iTrees = 2000
+depth = None
+maxFeat = 0.36
+# classweight = "balanced_subsample"
+classweight = None
+para_list = ['is_mix_service',
+                 '1_total_fee_norm', '2_total_fee_norm', '3_total_fee_norm', '4_total_fee_norm',
+                 'many_over_bill', 'contract_type',
+                 'is_promise_low_consume', 'net_service', 'pay_times',
+                 'gender',
+                 'complaint_level',
+                 'online_time_norm', 'fee_mean_norm', 'fee_std_norm',
+                 'fee_fluctuate_norm', 'month_traffic_norm', 'contract_time_norm', 'pay_num_norm',
+                 'last_month_traffic_norm', 'local_trafffic_month_norm', 'local_caller_time_norm',
+                 'service1_caller_time_norm', 'service2_caller_time_norm', 'age_norm', 'former_complaint_num_norm',
+                 'former_complaint_fee_norm', 'fee_mean_2_norm', 'service_caller_time_fluctuate_norm',
+                 'month_traffic_precentage', 'contract_time_precentage',
+                 'pay_times_precentage', 'pay_num_precentage', 'last_month_traffic_precentage',
+                 'local_trafffic_month_precentage', 'local_caller_time_precentage', 'service1_caller_time_precentage',
+                 'service2_caller_time_precentage',
+                 'user_id'
+                 ]
+results:
+obb_score
+0.8970156314167044
+train correct
+1.0
+F1 Score test
+F1
+[0.9383232795765112, 0.8988660032399908, 0.9607343192248852, 0.9444444444444445, 0.8293204922418405, 0.8110072689511942, 0.8616057482036864, 0.8094820017559262]
+precision
+[0.9263490520175012, 0.9032558139534884, 0.9751552795031055, 0.9355345911949685, 0.7973251028806584, 0.8282078472958643, 0.8662060301507538, 0.8747628083491461]
+recall
+[0.9506111249688202, 0.8945186549976969, 0.9467336683417086, 0.9535256410256411, 0.8639910813823858, 0.7945066124109867, 0.8570540708514606, 0.7532679738562091]
+0.7774353512189212
+test correct
+0.8979831932773109
+Missclassification Error
+[0.10201680672268909]
+importance attributes
+['former_complaint_fee_norm' 'net_service' 'complaint_level'
+ 'former_complaint_num_norm' 'is_mix_service'
+ 'local_trafffic_month_precentage' 'is_promise_low_consume'
+ 'month_traffic_precentage' 'last_month_traffic_precentage' 'pay_times'
+ 'pay_times_precentage' 'gender' 'local_caller_time_precentage'
+ 'pay_num_precentage' 'pay_num_norm' 'local_caller_time_norm'
+ 'fee_mean_2_norm' 'fee_fluctuate_norm' 'age_norm'
+ 'local_trafffic_month_norm' 'many_over_bill'
+ 'service1_caller_time_precentage' 'service1_caller_time_norm'
+ 'fee_std_norm' 'online_time_norm' 'contract_time_precentage'
+ 'month_traffic_norm' 'contract_time_norm'
+ 'service2_caller_time_precentage' 'service_caller_time_fluctuate_norm'
+ 'contract_type' 'service2_caller_time_norm' '4_total_fee_norm'
+ 'fee_mean_norm' '2_total_fee_norm' 'last_month_traffic_norm'
+ '3_total_fee_norm' '1_total_fee_norm']
+importance score
+[1.95089376e-07 8.41461063e-03 1.35416160e-02 1.51737338e-02
+ 1.65735150e-02 1.83479266e-02 1.87387040e-02 2.03325724e-02
+ 2.77806752e-02 3.56567978e-02 3.58032072e-02 4.38989155e-02
+ 5.11810517e-02 6.94051540e-02 7.43023881e-02 8.59148934e-02
+ 1.03518844e-01 1.11923375e-01 1.19447329e-01 1.21691346e-01
+ 1.25678812e-01 1.46772718e-01 1.50260686e-01 1.70460786e-01
+ 1.70879607e-01 1.73344936e-01 1.99448875e-01 2.22021115e-01
+ 2.35340805e-01 2.47178828e-01 2.74024878e-01 3.45785112e-01
+ 3.72579252e-01 3.86973355e-01 4.43896324e-01 6.88969714e-01
+ 8.70255538e-01 1.00000000e+00]
+F1
+[0.9383232795765112, 0.8988660032399908, 0.9607343192248852, 0.9444444444444445, 0.8293204922418405, 0.8110072689511942, 0.8616057482036864, 0.8094820017559262]
+precision
+[0.9263490520175012, 0.9032558139534884, 0.9751552795031055, 0.9355345911949685, 0.7973251028806584, 0.8282078472958643, 0.8662060301507538, 0.8747628083491461]
+recall
+[0.9506111249688202, 0.8945186549976969, 0.9467336683417086, 0.9535256410256411, 0.8639910813823858, 0.7945066124109867, 0.8570540708514606, 0.7532679738562091]
+[[3811   81   18    0   15   13   24   47]
+ [  78 1942    1    0   26   25   95    4]
+ [  40    6  942    1    0    0    0    6]
+ [   0    4    0  595   20    5    0    0]
+ [   7   12    1   28  775   46   27    1]
+ [  16   30    0    8   88  781   58    2]
+ [  37   68    0    4   46   69 1379    6]
+ [ 125    7    4    0    2    4    9  461]]
+0.7774353512189212
+
+
+
+
+
+
+
+
+
+
