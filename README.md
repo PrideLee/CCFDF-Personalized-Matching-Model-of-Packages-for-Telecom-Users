@@ -14,8 +14,8 @@
 
 &emsp;&emsp;套餐的个性化推荐，能够在信息过载的环境中帮助用户发现合适套餐，也能将合适套餐信息推送给用户。解决的问题有两个：（1）信息过载问题和用户无目的搜索问题。（2）各种套餐满足了用户有明确目的时的主动查找需求，而个性化推荐能够在用户没有明确目的的时候帮助他们发现感兴趣的新内容。通过利用已有的用户属性(如个人基本信息、用户画像信息等)、终端属性(如终端品牌等)、业务属性、消费习惯及偏好匹配用户最合适的套餐，对用户进行推送，完成后续个性化服务。该问题本质上是一个多分类问题，因此任何适用于多分类问题的模型算法均可用于该问题中。
 
-<div align=center><img width="800" height="700" src="https://github.com/PrideLee/CCFDF-Personalized-Matching-Model-of-Packages-for-Telecom-Users/blob/master/age.png"/></div>
+<div align=center><img width="800" height="600" src="https://github.com/PrideLee/CCFDF-Personalized-Matching-Model-of-Packages-for-Telecom-Users/blob/master/age.png"/></div>
 
-<div align=center><img width="800" height="700" src="https://github.com/PrideLee/CCFDF-Personalized-Matching-Model-of-Packages-for-Telecom-Users/blob/master/hot_map.png"/></div>
+<div align=center><img width="800" height="600" src="https://github.com/PrideLee/CCFDF-Personalized-Matching-Model-of-Packages-for-Telecom-Users/blob/master/hot_map.png"/></div>
 
-<div align=center><img width="800" height="700" src="https://github.com/PrideLee/CCFDF-Personalized-Matching-Model-of-Packages-for-Telecom-Users/blob/master/score.png"/></div>
+<div align=center><img width="800" height="600" src="https://github.com/PrideLee/CCFDF-Personalized-Matching-Model-of-Packages-for-Telecom-Users/blob/master/score.png"/></div>
